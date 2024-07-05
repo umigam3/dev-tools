@@ -1,4 +1,4 @@
-import GitHub from '@/icons/GitHub';
+import GitHub from "@/icons/GitHub";
 
 export default function Header() {
   return (
