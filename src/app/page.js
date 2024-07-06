@@ -1,9 +1,9 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Hero from '@/components/hero';
-import About from '@/components/about';
-import Card from '@/components/card';
+import Hero from '@/components/Hero';
+import About from '@/components/About';
+import Card from '@/components/Card';
 
 export default function HomePage() {
 
