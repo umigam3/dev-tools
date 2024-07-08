@@ -65,7 +65,7 @@ export default function HomePage() {
   }, [initialView, filteredData]);
 
   return (
-    <main className='max-w-5xl mx-auto px-9'>
+    <main className='max-w-6xl mx-auto px-9'>
       <Hero />
       <section className='flex flex-wrap justify-between min-h-full mx-auto'>
         <div className='w-full mb-5'>
