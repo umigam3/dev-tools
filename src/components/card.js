@@ -2,12 +2,19 @@ import Arrow from "@/icons/Arrow";
 
 export default function Card({ tool }) {
 	return (
-		<a href={tool.url} target="_blank" className="cursor-pointer p-4 w-full sm:w-[49%] lg:w-[32.5%] rounded-xl border-[1px] border-gray-700 mb-4">
-			<div className="flex items-center justify-between mb-3">
-				<h2 className='font-bold'>{tool.name}</h2>
-				<Arrow className="w-3 h-3"/>
+		<a href={tool.url} target="_blank" className="flex flex-col justify-between gap-y-10 cursor-pointer p-4 w-full sm:w-[49%] lg:w-[32.5%] rounded-xl border-[1px] border-gray-700 mb-4">
+			<div>
+				<div className="flex items-center justify-between mb-3">
+					<h2 className='font-bold'>{tool.name}</h2>
+					<Arrow className="w-3 h-3"/>
+				</div>
+				<p className='text-sm text-slate-400 mb-2'>{tool.description}</p>
 			</div>
-			<p className='text-sm text-slate-400 mb-2'>{tool.description}</p>
+			<div className="flex flex-wrap gap-x-[0.5px]">
+				{tool.tags.map((tag) => (
+					<span class="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-xl dark:bg-gray-800 dark:text-gray-300 mb-2">{tag}</span>
+				))}
+			</div>
 		</a>
 	);
 }

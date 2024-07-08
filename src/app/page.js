@@ -1,9 +1,9 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Hero from '@/components/hero';
-import About from '@/components/about';
-import Card from '@/components/card';
+import Hero from '@/components/Hero';
+import About from '@/components/About';
+import Card from '@/components/Card';
 
 export default function HomePage() {
 
@@ -31,10 +31,10 @@ export default function HomePage() {
   };
 
   const filteredData = data
-  ? data.filter((tool) =>
-      tool.name.toLowerCase().includes(searchQuery.toLowerCase())
-    )
-  : [];
+    ? data.filter((tool) =>
+        tool.name.toLowerCase().includes(searchQuery.toLowerCase())
+      )
+    : [];
 
   return (
     <main className='max-w-5xl mx-auto px-9'>
