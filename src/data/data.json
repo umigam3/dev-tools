@@ -1,63 +1,45 @@
 [
     {
-      "name": "Visual Studio Code",
-      "description": "A lightweight but powerful source code editor which runs on your desktop and is available for Windows, macOS, and Linux.",
-      "url": "https://code.visualstudio.com/",
-      "tags": ["IDE", "Editor", "JavaScript", "TypeScript"]
+      "name": "SVGL",
+      "description": "A beautiful library with SVG logos. Built with Sveltekit & Tailwind CSS.",
+      "url": "https://svgl.app/",
+      "tags": ["SVG", "Logos", "UI"]
     },
     {
-      "name": "GitHub",
-      "description": "A development platform inspired by the way you work. From open source to business, you can host and review code, manage projects, and build software alongside millions of other developers.",
-      "url": "https://github.com/",
-      "tags": ["Version Control", "Collaboration", "Git", "Repository"]
+      "name": "Tabler Icons",
+      "description": "Tabler is fully responsive and compatible with all modern browsers. Thanks to its modern and user-friendly design you can create a fully functional interface that users will love!",
+      "url": "https://tabler.io/icons",
+      "tags": ["Logos", "SVG", "Illustrations", "UI"]
     },
     {
-      "name": "Postman",
-      "description": "A collaboration platform for API development. Postman's features simplify each step of building an API and streamline collaboration so you can create better APIs—faster.",
-      "url": "https://www.postman.com/",
-      "tags": ["API", "Testing", "Integration", "HTTP"]
+      "name": "Open Graph",
+      "description": "The easiest way to preview and generate Open Graph Meta tags. Try the Free Meta Tag Generator and preview all Open Graph meta tags in one place.",
+      "url": "https://www.opengraph.xyz/",
+      "tags": ["SEO"]
     },
     {
-      "name": "React",
-      "description": "A JavaScript library for building user interfaces, maintained by Facebook. It lets you compose complex UIs from small and isolated pieces of code called 'components'.",
-      "url": "https://reactjs.org/",
-      "tags": ["JavaScript", "UI Framework", "Frontend", "Component-Based"]
+      "name": "UnDraw",
+      "description": "Create better designed websites, products and applications. Browse to find the images that fit your messaging, automagically customise the color to match your brand and use it as a normal image, embedded code or directly in your design workflow.",
+      "url": "https://undraw.co/",
+      "tags": ["Illustrations", "UI"]
     },
     {
-      "name": "MongoDB",
-      "description": "A general purpose, document-based, distributed database built for modern application developers and for the cloud era.",
-      "url": "https://www.mongodb.com/",
-      "tags": ["Database", "NoSQL", "Document-Oriented", "Cloud"]
+      "name": "Shots",
+      "description": "Shots is an innovative tool designed to help designers and developers create stunning mockups effortlessly. With an extensive library of illustrations and UI elements, Shots provides the perfect resources to bring your design ideas to life.",
+      "url": "https://shots.so/",
+      "tags": ["Illustrations", "UI"]
     },
     {
-      "name": "Docker",
-      "description": "An open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure so you can deliver software quickly.",
-      "url": "https://www.docker.com/",
-      "tags": ["Containerization", "DevOps", "Virtualization", "Deployment"]
+      "name": "Background Snippets",
+      "description": "Ready-to-use, simply copy and paste into your next project. All snippets crafted with Tailwind CSS and Vanilla CSS for easy integration.",
+      "url": "https://bg.ibelick.com/",
+      "tags": ["UI"]
     },
     {
-      "name": "JIRA",
-      "description": "A tool developed by Atlassian for bug tracking, issue tracking, and project management. It is widely used in software development teams.",
-      "url": "https://www.atlassian.com/software/jira",
-      "tags": ["Project Management", "Bug Tracking", "Agile", "Workflow"]
-    },
-    {
-      "name": "Bootstrap",
-      "description": "A free and open-source CSS framework directed at responsive, mobile-first front-end web development. It contains CSS- and JavaScript-based design templates for typography, forms, buttons, navigation, and other interface components.",
-      "url": "https://getbootstrap.com/",
-      "tags": ["CSS Framework", "Frontend", "Responsive Design", "UI Components"]
-    },
-    {
-      "name": "Visual Studio",
-      "description": "An integrated development environment (IDE) developed by Microsoft. It is used to develop computer programs, websites, web apps, web services, and mobile apps.",
-      "url": "https://visualstudio.microsoft.com/",
-      "tags": ["IDE", "Microsoft", "Development", "Windows"]
-    },
-    {
-      "name": "Webpack",
-      "description": "A static module bundler for modern JavaScript applications. When webpack processes your application, it recursively builds a dependency graph that includes every module your application needs.",
-      "url": "https://webpack.js.org/",
-      "tags": ["JavaScript", "Module Bundler", "Build Tool", "Frontend"]
+      "name": "Fontsource",
+      "description": "Fontsource is a collection of open-source fonts that are packaged into individual NPM packages for self-hosting in your web applications. This documentation outlines the benefits of using Fontsource and how to get started.",
+      "url": "https://fontsource.org/",
+      "tags": ["Fonts", "UI"]
     }
   ]
   
