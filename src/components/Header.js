@@ -8,7 +8,9 @@ export default function Header() {
           AllTools.dev
         </div>
         <nav>
-          <GitHub className="h-6 w-6"/>
+          <a href="https://github.com/umigam3/dev-tools" target="_blank">
+            <GitHub className="h-6 w-6 hover:scale-125   duration-150"/>
+          </a>
         </nav>
       </div>
     </header>
