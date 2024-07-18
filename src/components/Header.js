@@ -4,8 +4,8 @@ export default function Header() {
   return (
     <header className="flex items-center h-14 w-full">
       <div className="flex items-center justify-between max-w-6xl w-full mx-auto px-9">
-        <div>
-          AllTools.dev
+        <div className="font-bold text-2xl">
+          AllTools<span className="ml-1 text-sm bg-gradient-to-r from-pink-600 to-purple-400 rounded py-[1px] px-[3px]">.dev</span>
         </div>
         <nav>
           <a href="https://github.com/umigam3/dev-tools" target="_blank">

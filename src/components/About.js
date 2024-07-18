@@ -14,7 +14,7 @@ export default function About() {
               contributing to this wonderful community.
             </p>
 
-            <h1 class="mb-6 font-extrabold tracking-tight leading-none text-gray-900 text-3xl dark:text-white">How can you <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-purple-400">contribute</span> to this project?</h1>
+            <h1 id="addtool" class="mb-6 font-extrabold tracking-tight leading-none text-gray-900 text-3xl dark:text-white">How can you <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-purple-400">contribute</span> to this project?</h1>
             <p class="mb-2 text-base font-normal text-gray-500 dark:text-gray-400">
               While working on my personal projects to learn different technologies, I often found myself referring to a small bookmark folder where 
               I keep all the tools I typically use for more comfortable development. 
