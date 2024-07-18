@@ -67,8 +67,8 @@ export default function HomePage() {
   return (
     <main className='max-w-6xl mx-auto px-9'>
       <Hero />
-      <section className='flex flex-wrap justify-between min-h-full mx-auto'>
-        <div className='w-full mb-5'>
+      <section className='flex flex-wrap gap-3 min-h-full mx-auto'>
+        <div className='w-full mb-2'>
           <input
             type='text'
             placeholder={`Search among ${filteredData.length} items...`}
@@ -77,7 +77,7 @@ export default function HomePage() {
             className='w-full px-4 py-2 border border-gray-700 rounded-md'
           />
         </div>
-        <div className='w-full mb-5 flex flex-wrap gap-2'>
+        <div className='w-full mb-2 flex flex-wrap gap-2'>
           {allTags.map((tag) => (
             <button
               key={tag}
