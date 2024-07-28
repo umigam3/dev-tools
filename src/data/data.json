@@ -41,5 +41,11 @@
     "url": "https://fontsource.org/",
     "tags": ["Fonts", "UI"]
   }
+    {
+    "name": "CSS Matic Box Shadow",
+    "description": "Blur radius changes, color changes, shadow size…  Everything that you need to create great drop shadows in a single place.",
+    "url": "https://www.cssmatic.com/box-shadow",
+    "tags": ["CSS", "UI"]
+  }
 ]
   
