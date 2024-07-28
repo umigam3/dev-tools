@@ -4,6 +4,7 @@ import { useEffect, useState, useMemo } from 'react';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Card from '@/components/Card';
+import Head from 'next/head';
 
 export default function HomePage() {
   const [data, setData] = useState(null);
