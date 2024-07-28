@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
+<a href="https://alltoolsdev.netlify.app/">
+<img src="public/alltoolsdevbanner.png">
+</a>
+<p></p>
+</div>
+</p>
 
-## Getting Started
+<div align="center">
 
-First, run the development server:
+![Next JS Badge](https://img.shields.io/badge/Next-161616?logo=nextdotjs&logoColor=white&style=flat)
+![JavaScript Badge](https://img.shields.io/badge/JavaScript-F7DF1E?logo=JavaScript&logoColor=000&style=flat)
+![Tailwind CSS Badge](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?logo=tailwindcss&logoColor=fff&style=flat)
+![GitHub stars](https://img.shields.io/github/stars/umigam3/dev-tools)
+![GitHub forks](https://img.shields.io/github/forks/umigam3/dev-tools)
+![GitHub PRs](https://img.shields.io/github/issues-pr/umigam3/dev-tools)
+
+</div>
+
+## 🚀 Getting Started
+
+1. [Fork](https://github.com/umigam3/dev-tools/fork) this repository and clone it locally:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone git@github.com:your_username/dev-tools.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```bash
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+3. Go to the [**`src/data/data.json`**](https://github.com/umigam3/dev-tools/blob/main/src/data/data.json) file and add the information about the tool, following this structure:
 
-## Learn More
+```json
+{
+    "name": "Name",
+    "description": "Short description about the tool.",
+    "url": "https://url_to_tool.example/",
+    "tags": ["Example 1", "Example 2", "Example 3"]
+}
+```
 
-To learn more about Next.js, take a look at the following resources:
+> [!NOTE]
+>
+> - Please review the existing tags in the other tools and try to use meaningful categories, if two are very similar, use the one that already exists to avoid creating low-value categories.
+> - You can add multiple categories to the same tool, for example: `"tags": ["UI", "Design"]`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+And create a pull request with your tool 🚀.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 👨‍💻 Contributors
 
-## Deploy on Vercel
+<a href="https://github.com/umigam3/dev-tools/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=umigam3/dev-tools" />
+</a>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<p></p>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 🔑 License
+
+- [MIT](https://github.com/umigam3/dev-tools/blob/main/LICENSE).
