@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Card from '@/components/Card';
@@ -46,14 +46,16 @@ export default function HomePage() {
     setShowAllButton(false);
   };
 
-  const filteredData = data
-    ? data.filter(
-        (tool) =>
-          tool.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
-          (selectedTags.length === 0 ||
-            selectedTags.every((tag) => tool.tags.includes(tag)))
-      )
-    : [];
+  const filteredData = useMemo(() => {
+    return data
+      ? data.filter(
+          (tool) =>
+            tool.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
+            (selectedTags.length === 0 ||
+              selectedTags.every((tag) => tool.tags.includes(tag)))
+        )
+      : [];
+  }, [data, searchQuery, selectedTags]);
 
   const displayedData = initialView ? filteredData.slice(0, 6) : filteredData;
 

@@ -11,8 +11,8 @@ export default function Card({ tool }) {
 				<p className='text-sm text-slate-400 mb-2'>{tool.description}</p>
 			</div>
 			<div className="flex flex-wrap gap-x-[0.5px]">
-				{tool.tags.map((tag) => (
-					<span class="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-xl dark:bg-gray-800 dark:text-gray-300 mb-2">{tag}</span>
+				{tool.tags.map((tag, index) => (
+					<span key={index} class="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-xl dark:bg-gray-800 dark:text-gray-300 mb-2">{tag}</span>
 				))}
 			</div>
 		</a>

@@ -9,7 +9,7 @@ export default function About() {
             </p>
             <p class="mb-8 text-base font-normal text-gray-500 dark:text-gray-400">
               One day, an idea pop up: 
-              "Why not create a <span className="font-bold text-white">directory of developer tools</span> and encourage everyone to collaborate and share their favorite tools?" 
+              &quot;Why not create a <span className="font-bold text-white">directory of developer tools</span> and encourage everyone to collaborate and share their favorite tools?&quot;
               This is why alltoolsdev was born, a place to discover new tools that enhance your workflow and to share your favorites, 
               contributing to this wonderful community.
             </p>
