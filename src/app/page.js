@@ -57,12 +57,12 @@ export default function HomePage() {
       : [];
   }, [data, searchQuery, selectedTags]);
 
-  const displayedData = initialView ? filteredData.slice(0, 6) : filteredData;
+  const displayedData = initialView ? filteredData.slice(0, 30) : filteredData;
 
   const allTags = data ? [...new Set(data.flatMap((tool) => tool.tags))] : [];
 
   useEffect(() => {
-    setShowAllButton(initialView && filteredData.length > 5);
+    setShowAllButton(initialView && filteredData.length > 30);
   }, [initialView, filteredData]);
 
   return (
