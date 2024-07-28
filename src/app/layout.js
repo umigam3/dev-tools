@@ -8,6 +8,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "AllTools.dev - A complete collection of developer tools",
   description: "A collection of coding tools designed to simplify developers lives and boost productivity.",
+  icons: {
+    icon: 'favicon.ico',
+  },
   openGraph: {
     url: "https://alltoolsdev.netlify.app/",
     type: "website",
