@@ -17,7 +17,7 @@ export const metadata = {
     title: "AllTools.dev - A complete collection of developer tools",
     description: "A collection of coding tools designed to simplify developers lives and boost productivity.",
     images: [
-      {
+      { 
         url: "alltoolsdevbanner.png",
         width: 800,
         height: 600,

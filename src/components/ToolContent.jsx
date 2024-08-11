@@ -2,40 +2,44 @@
 
 import { useEffect, useState, useMemo } from 'react';
 import Card from '@/components/Card';
+import axios from 'axios';
 
 export default function HomePage() {
   const [data, setData] = useState(null);
+  const [tags, setTags] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTags, setSelectedTags] = useState([]);
   const [initialView, setInitialView] = useState(true);
   const [showAllButton, setShowAllButton] = useState(false);
 
+  const baseURL = 'http://192.168.1.48:3001';
+
   useEffect(() => {
-    const fetchTools = async () => {
+    const fetchData = async () => {
       setIsLoading(true);
 
-      const response = await fetch('/api/data');
-      const tools = await response.json();
+      const response = await axios.get(`${baseURL}/tools`);
+      setData(response.data.tools);
 
-      setData(tools);
       setIsLoading(false);
     };
 
-    fetchTools();
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const fetchTags = async () => {
+      const response = await axios.get(`${baseURL}/tags`);
+      setTags(response.data.tags);
+    };
+
+    fetchTags();
+
   }, []);
 
   const handleSearchChange = (event) => {
     setSearchQuery(event.target.value);
-    setInitialView(false);
-  };
-
-  const toggleTag = (tag) => {
-    setSelectedTags((prevTags) =>
-      prevTags.includes(tag)
-        ? prevTags.filter((t) => t !== tag)
-        : [...prevTags, tag]
-    );
     setInitialView(false);
   };
 
@@ -48,7 +52,7 @@ export default function HomePage() {
     return data
       ? data.filter(
           (tool) =>
-            tool.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
+            tool.title.toLowerCase().includes(searchQuery.toLowerCase()) &&
             (selectedTags.length === 0 ||
               selectedTags.every((tag) => tool.tags.includes(tag)))
         )
@@ -57,45 +61,42 @@ export default function HomePage() {
 
   const displayedData = initialView ? filteredData.slice(0, 30) : filteredData;
 
-  const allTags = data ? [...new Set(data.flatMap((tool) => tool.tags))] : [];
-
   useEffect(() => {
     setShowAllButton(initialView && filteredData.length > 30);
   }, [initialView, filteredData]);
 
   return (
     <>
-      <section className='flex flex-wrap gap-3 min-h-full mx-auto'>
-        <div className='w-full mb-2'>
-          <input
-            type='text'
-            placeholder={`Search among ${filteredData.length} items...`}
-            value={searchQuery}
-            onChange={handleSearchChange}
-            className='w-full px-4 py-2 border border-gray-700 rounded-md'
-          />
-        </div>
-        <div className='w-full mb-2 flex flex-wrap gap-2'>
-          {allTags.map((tag) => (
+      <div className='w-full mb-2'>
+        <input
+          type='text'
+          placeholder={`Search among ${filteredData.length} items...`}
+          value={searchQuery}
+          onChange={handleSearchChange}
+          className='w-full px-4 py-2 border border-gray-700 rounded-md'
+        />
+      </div>
+      <div className='w-full mb-2 flex flex-wrap gap-2'>
+          {tags.map((tag) => (
             <button
-              key={tag}
-              onClick={() => toggleTag(tag)}
+              key={tag.tag_id}
               className={`px-4 py-2 rounded-3xl border-gray-700 border text-sm ${
                 selectedTags.includes(tag)
                   ? 'bg-white text-black'
                   : 'bg-[#161616] text-white'
               }`}
             >
-              {tag}
+              {tag.name}
             </button>
           ))}
-        </div>
+      </div>
+      <section className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 min-h-full mx-auto w-full'>
         {isLoading && <div>Loading...</div>}
         {!isLoading && displayedData.map((tool) => 
-          <Card key={tool.name} tool={tool} />)}
+          <Card key={tool.tool_id} tool={tool} />)}
         {filteredData.length === 0 && (
           <div className='flex items-center justify-center h-48 w-full text-4xl font-bold opacity-20 text-center'>
-            No Tools Found
+            <span className='text-center'>No Tools Found</span>
           </div>
         )}
       </section>
