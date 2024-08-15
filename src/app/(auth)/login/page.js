@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Input } from "@nextui-org/react";
+import { Button } from "@nextui-org/button";
 import axios from 'axios';
 
 export default function HomePage() {
@@ -28,8 +29,8 @@ export default function HomePage() {
   };
 
   return (
-    <main className='max-w-6xl mx-auto flex items-center justify-center h-[calc(100vh-112px)]'>
-      <form onSubmit={handleSubmit} className='max-w-md mx-auto p-6 border-slate-700 border rounded-xl'>
+    <main className='dark max-w-6xl mx-auto flex items-center justify-center h-[calc(100vh-112px)]'>
+      <form onSubmit={handleSubmit} className='flex flex-col justify-center items-center mx-auto px-16 py-10 border-white/15 border rounded-xl w-[30rem]'>
         <div className='flex flex-col gap-y-3 items-center mb-10'>
           <div className="font-semibold text-4xl">Welcome to</div>
           <div className="font-bold text-2xl select-none">
@@ -37,40 +38,42 @@ export default function HomePage() {
           </div>
         </div>
         {error && <p className='text-red-500 mb-4'>{error}</p>}
-        <div>
+        <div className='mb-3 w-full'>
           <Input
-              variant='bordered'
-              type='email'
-              label='Email'
-              id='email'
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              isRequired
+            color='dark'
+            className=''
+            variant='flat'
+            type='email'
+            label='Email'
+            id='email'
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            isRequired
+            isClearable
           />
         </div>
-        <div className='mb-6'>
+        <div className='mb-6 w-full'>
           <Input
-              variant='bordered'
-              type='password'
-              label='Password'
-              id='password'
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              isRequired
+            variant='flat'
+            type='password'
+            label='Password'
+            id='password'
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            isRequired
           />
         </div>
-        <div className='p-7'>
+        <div className='p-7 flex justify-center'>
           <span className='text-center'>Don't have an accout? <a href='/signup' className='text-pink-500 hover:underline'>Sign Up</a></span>
         </div>
-        <button
+        <Button 
+          isLoading={isSubmitting}
           type='submit'
-          disabled={isSubmitting}
-          className={`w-full py-2 px-4 bg-gradient-to-r from-pink-600 to-purple-400 text-white rounded-md ${
-            isSubmitting ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-600'
-          }`}
+          color='primary'
+          className='w-2/3 py-7 px-8 bg-gradient-to-r from-pink-600 to-purple-400 text-white rounded-xl'
         >
           {isSubmitting ? 'Logging in...' : 'Login'}
-        </button>
+        </Button>
       </form>
     </main>
   );
