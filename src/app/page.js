@@ -1,5 +1,4 @@
 import Hero from '@/components/Hero';
-import About from '@/components/About';
 import ToolContent from '@/components/ToolContent';
 
 export default function HomePage() {
@@ -9,7 +8,6 @@ export default function HomePage() {
       <section className='flex flex-wrap gap-3 min-h-full mx-auto'>
         <ToolContent />
       </section>
-      <About />
     </main>
   );
 }
