@@ -36,7 +36,7 @@ export default function HomePage() {
   return (
     <main className='max-w-6xl mx-auto flex flex-col items-center min-h-[calc(100vh-112px)] py-20'>
       <img src='/logo.svg' width="75" className='mb-2'/>
-      <span className="font-bold text-2xl select-none mb-8">
+      <span className="font-bold text-2xl mb-8">
         AllTools
       </span>
       <form onSubmit={handleSubmit} className='flex flex-col justify-center items-center px-16 py-10 bg-[#161616] border-white/5 border rounded-2xl w-[30rem] mx-10'>
