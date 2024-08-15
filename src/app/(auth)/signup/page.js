@@ -18,7 +18,7 @@ export default function SignUpPage() {
     setIsSubmitting(true);
     setError('');
 
-    const baseURL = 'http://192.168.1.48:3001';
+    const baseURL = process.env.NEXT_PUBLIC_BASE_URL;
 
     // Validación de la coincidencia de contraseñas
     if (password !== confirmPassword) {
@@ -44,8 +44,8 @@ export default function SignUpPage() {
   };
 
   return (
-    <div className='flex justify-center items-center h-screen'>
-      <form onSubmit={handleSubmit} className=' p-8 rounded-md shadow-md'>
+    <div className='flex justify-center items-center h-[calc(100vh-112px)]'>
+      <form onSubmit={handleSubmit} className='p-8 rounded-md shadow-md'>
         <h2 className='text-2xl font-bold mb-6'>Sign Up</h2>
         {error && <p className='text-red-500 mb-4'>{error}</p>}
         <div className='mb-4'>
