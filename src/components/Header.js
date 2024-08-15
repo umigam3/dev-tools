@@ -8,8 +8,8 @@ export default function Header() {
           AllTools<span className="ml-1 text-sm bg-gradient-to-r from-pink-600 to-purple-400 rounded py-[1px] px-[3px]">.dev</span>
         </a>
         <nav>
-          <a href="https://github.com/umigam3/dev-tools" target="_blank">
-            <GitHub className="h-6 w-6 hover:scale-125   duration-150"/>
+          <a href="/login">
+            <span className="h-6 w-6 hover:scale-125   duration-150">Login</span>
           </a>
         </nav>
       </div>

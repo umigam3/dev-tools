@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react';
-import { Input } from "@nextui-org/input";
+import { Input } from "@nextui-org/react";
 import axios from 'axios';
 
 export default function HomePage() {
@@ -39,7 +39,7 @@ export default function HomePage() {
         {error && <p className='text-red-500 mb-4'>{error}</p>}
         <div>
           <Input
-              variant='underlined'
+              variant='bordered'
               type='email'
               label='Email'
               id='email'
@@ -50,7 +50,7 @@ export default function HomePage() {
         </div>
         <div className='mb-6'>
           <Input
-              variant='underlined'
+              variant='bordered'
               type='password'
               label='Password'
               id='password'
