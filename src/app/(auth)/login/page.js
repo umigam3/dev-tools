@@ -112,7 +112,7 @@ export default function LoginPage() {
           <span className="text-sm">
             No accout?{" "}
             <a href="/signup" className="text-pink-500 hover:underline">
-              Sign Up
+              Sign up
             </a>
           </span>
         </div>

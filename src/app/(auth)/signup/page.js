@@ -17,7 +17,6 @@ export default function SignUpPage() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
@@ -29,12 +28,6 @@ export default function SignUpPage() {
     setError("");
 
     const baseURL = process.env.NEXT_PUBLIC_BASE_URL;
-
-    if (password !== confirmPassword) {
-      setError("Passwords do not match.");
-      setIsSubmitting(false);
-      return;
-    }
 
     try {
       const response = await axios.post(`${baseURL}/users`, {
@@ -55,24 +48,24 @@ export default function SignUpPage() {
 
   return (
     <main className="max-w-6xl mx-auto flex flex-col items-center min-h-[calc(100vh-112px)] py-6">
-      <img src="/logo.svg" width="75" className="mb-2" />
-      <span className="font-bold text-2xl mb-8">AllTools</span>
+      {/* <span className="font-bold text-2xl mb-8">AllTools</span> */}
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col justify-center items-center px-8 md:px-16 py-10 bg-[#161616] border-white/5 border rounded-2xl max-w-[30rem] mx-10 w-full"
+        className="flex flex-col justify-center items-center px-8 md:px-14 py-10 bg-[#161616] border-[#3F3F46]/10 border-0 rounded-xl max-w-[30rem] w-full"
       >
-        <div className="flex flex-col gap-y-3 items-center mb-10">
-          <h1 className="text-3xl font-bold">Sign Up</h1>
+        <img src="/logo.svg" width="75" className="mb-2" />
+        <div className="flex flex-col gap-y-3 items-center mb-14">
+          <h1 className="text-2xl font-medium">Sign up</h1>
         </div>
         {error && <p className="text-red-500 mb-4">{error}</p>}
         <div className="mb-3 w-full">
           <Input
             color="dark"
             className=""
-            variant="flat"
+            variant="bordered"
             type="text"
             label="Username"
-            placeholder="Enter your username"
+            // placeholder="Enter your username"
             id="username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
@@ -83,7 +76,7 @@ export default function SignUpPage() {
           <Input
             color="dark"
             className=""
-            variant="flat"
+            variant="bordered"
             type="email"
             label="Email"
             // placeholder="Enter your email"
@@ -97,9 +90,9 @@ export default function SignUpPage() {
             }}
           />
         </div>
-        <div className="mb-3 w-full">
+        <div className="mb-5 w-full">
           <Input
-            variant="flat"
+            variant="bordered"
             label="Password"
             id="password"
             value={password}
@@ -124,44 +117,17 @@ export default function SignUpPage() {
             isRequired
           />
         </div>
-        <div className="mb-6 w-full">
-          <Input
-            variant="flat"
-            label="Password"
-            id="confirmPassword"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            // placeholder="Rpeat your password"
 
-            endContent={
-              <button
-                className="focus:outline-none"
-                type="button"
-                onClick={toggleVisibility}
-                aria-label="toggle password visibility"
-              >
-                {confirmPassword.length > 0 &&
-                  (isVisible ? (
-                    <EyeFilledIcon className="text-2xl text-default-400 pointer-events-none" />
-                  ) : (
-                    <EyeSlashFilledIcon className="text-2xl text-default-400 pointer-events-none" />
-                  ))}
-              </button>
-            }
-            type={isVisible ? "text" : "password"}
-            isRequired
-          />
-        </div>
         <Button
           isLoading={isSubmitting}
           type="submit"
           color="primary"
-          className="text-lg w-2/3 py-7 px-8 bg-gradient-to-r from-pink-600 to-purple-400 text-white rounded-xl"
+          className="text-lg w-full mb-16 py-6 px-8 bg-gradient-to-r from-pink-600 to-purple-400 text-white rounded-xxl font-medium"
         >
-          {isSubmitting ? "Signing up..." : "Create account"}
+          {isSubmitting ? "Creating account..." : "Create account"}
         </Button>
-        <div className="p-7 flex justify-center">
-          <span className="text-center">
+        <div className="w-full text-center mb-10">
+          <span className="text-center text-sm">
             Already have an account?{" "}
             <a href="/login" className="text-pink-500 hover:underline">
               Log in
