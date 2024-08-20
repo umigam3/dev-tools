@@ -1,13 +1,18 @@
 'use client'
 
+// Utility
+import axios from 'axios';
 import { useState } from 'react';
+
+// UI
 import { Input } from "@nextui-org/react";
 import { Button } from "@nextui-org/button";
-import axios from 'axios';
+
+// Icons
 import { EyeSlashFilledIcon } from '@/components/ui/EyeSlashFilledIcon';
 import { EyeFilledIcon } from '@/components/ui/EyeFilledIcon';
 
-export default function HomePage() {
+export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -39,7 +44,7 @@ export default function HomePage() {
       <span className="font-bold text-2xl mb-8">
         AllTools
       </span>
-      <form onSubmit={handleSubmit} className='flex flex-col justify-center items-center px-16 py-10 bg-[#161616] border-white/5 border rounded-2xl w-[30rem] mx-10'>
+      <form onSubmit={handleSubmit} className='flex flex-col justify-center items-center px-8 md:px-16 py-10 bg-[#161616] border-white/5 border rounded-2xl max-w-[30rem] w-full'>
         <div className='flex flex-col gap-y-3 items-center mb-10'>
           <h1 className='text-3xl font-bold'>Login</h1>
         </div>
@@ -79,7 +84,6 @@ export default function HomePage() {
             type={isVisible ? "text" : "password"}
             isRequired
           />
-
         </div>
         <div className='p-7 flex justify-center'>
           <span className='text-center'>Don't have an accout? <a href='/signup' className='text-pink-500 hover:underline'>Sign Up</a></span>
@@ -94,6 +98,5 @@ export default function HomePage() {
         </Button>
       </form>
     </main>
-    
   );
 }

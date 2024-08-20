@@ -1,8 +1,18 @@
 'use client';
 
-import { useState } from 'react';
+// Utility
 import axios from 'axios';
+import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+
+// UI
+import { Input } from "@nextui-org/react";
+import { Button } from "@nextui-org/button";
+
+// Icons
+import { EyeSlashFilledIcon } from '@/components/ui/EyeSlashFilledIcon';
+import { EyeFilledIcon } from '@/components/ui/EyeFilledIcon';
+
 
 export default function SignUpPage() {
   const [username, setUsername] = useState('');
@@ -11,6 +21,7 @@ export default function SignUpPage() {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const router = useRouter();
 
   const handleSubmit = async (e) => {
@@ -20,7 +31,6 @@ export default function SignUpPage() {
 
     const baseURL = process.env.NEXT_PUBLIC_BASE_URL;
 
-    // Validación de la coincidencia de contraseñas
     if (password !== confirmPassword) {
       setError('Passwords do not match.');
       setIsSubmitting(false);
@@ -34,7 +44,6 @@ export default function SignUpPage() {
         password,
       });
 
-      // Redirigir al usuario a otra página después de un registro exitoso
       router.push('/login');
     } catch (err) {
       setError('Sign up failed. Please try again.');
@@ -43,65 +52,102 @@ export default function SignUpPage() {
     }
   };
 
+  const toggleVisibility = () => setIsVisible(!isVisible);
+
   return (
-    <div className='flex justify-center items-center h-[calc(100vh-112px)]'>
-      <form onSubmit={handleSubmit} className='p-8 rounded-md shadow-md'>
-        <h2 className='text-2xl font-bold mb-6'>Sign Up</h2>
+    <main className='max-w-6xl mx-auto flex flex-col items-center min-h-[calc(100vh-112px)] py-6'>
+      <img src='/logo.svg' width="75" className='mb-2'/>
+      <span className="font-bold text-2xl mb-8">
+        AllTools
+      </span>
+      <form onSubmit={handleSubmit} className='flex flex-col justify-center items-center px-8 md:px-16 py-10 bg-[#161616] border-white/5 border rounded-2xl max-w-[30rem] mx-10 w-full'>
+        <div className='flex flex-col gap-y-3 items-center mb-10'>
+          <h1 className='text-3xl font-bold'>Sign Up</h1>
+        </div>
         {error && <p className='text-red-500 mb-4'>{error}</p>}
-        <div className='mb-4'>
-          <label htmlFor='username' className='block text-gray-700'>Username</label>
-          <input
+        <div className='mb-3 w-full'>
+          <Input
+            color='dark'
+            className=''
+            variant='flat'
             type='text'
+            label='Username'
+            placeholder='Enter your username'
             id='username'
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            className='w-full px-4 py-2 border border-gray-300 rounded-md'
-            required
+            isRequired
           />
         </div>
-        <div className='mb-4'>
-          <label htmlFor='email' className='block text-gray-700'>Email</label>
-          <input
+        <div className='mb-3 w-full'>
+          <Input
+            color='dark'
+            className=''
+            variant='flat'
             type='email'
+            label='Email'
+            placeholder="Enter your email"
             id='email'
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className='w-full px-4 py-2 border border-gray-300 rounded-md'
-            required
+            isRequired
+            isClearable
           />
         </div>
-        <div className='mb-4'>
-          <label htmlFor='password' className='block text-gray-700'>Password</label>
-          <input
-            type='password'
+        <div className='mb-3 w-full'>
+          <Input
+            variant='flat'
+            label="Password"
             id='password'
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className='w-full px-4 py-2 border border-gray-300 rounded-md'
-            required
+            placeholder="Enter your password"
+            endContent={
+              <button className="focus:outline-none" type="button" onClick={toggleVisibility} aria-label="toggle password visibility">
+                {isVisible ? (
+                  <EyeSlashFilledIcon className="text-2xl text-default-400 pointer-events-none" />
+                ) : (
+                  <EyeFilledIcon className="text-2xl text-default-400 pointer-events-none" />
+                )}
+              </button>
+            }
+            type={isVisible ? "text" : "password"}
+            isRequired
           />
         </div>
-        <div className='mb-4'>
-          <label htmlFor='confirmPassword' className='block text-gray-700'>Confirm Password</label>
-          <input
-            type='password'
+        <div className='mb-6 w-full'>
+          <Input
+            variant='flat'
+            label="Password"
             id='confirmPassword'
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
-            className='w-full px-4 py-2 border border-gray-300 rounded-md'
-            required
+            placeholder="Rpeat your password"
+            endContent={
+              <button className="focus:outline-none" type="button" onClick={toggleVisibility} aria-label="toggle password visibility">
+                {isVisible ? (
+                  <EyeSlashFilledIcon className="text-2xl text-default-400 pointer-events-none" />
+                ) : (
+                  <EyeFilledIcon className="text-2xl text-default-400 pointer-events-none" />
+                )}
+              </button>
+            }
+            type={isVisible ? "text" : "password"}
+            isRequired
           />
         </div>
-        <button
+        <div className='p-7 flex justify-center'>
+          <span className='text-center'>Already have an account? <a href='/login' className='text-pink-500 hover:underline'>Login</a></span>
+        </div>
+        <Button 
+          isLoading={isSubmitting}
           type='submit'
-          disabled={isSubmitting}
-          className={`w-full py-2 px-4 bg-green-500 text-white rounded-md ${
-            isSubmitting ? 'opacity-50 cursor-not-allowed' : 'hover:bg-green-600'
-          }`}
+          color='primary'
+          className='text-lg w-2/3 py-7 px-8 bg-gradient-to-r from-pink-600 to-purple-400 text-white rounded-xl'
         >
           {isSubmitting ? 'Signing up...' : 'Sign Up'}
-        </button>
+        </Button>
       </form>
-    </div>
+    </main>
   );
 }

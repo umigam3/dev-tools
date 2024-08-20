@@ -68,7 +68,7 @@ export default function HomePage() {
   }, [initialView, filteredData]);
 
   return (
-    <div className='min-h-screen w-full'>
+    <div className='min-h-[calc(100dvh-400px)] w-full'>
       <div className='w-full mb-2'>
         <Input
           radius="lg"
@@ -117,24 +117,15 @@ export default function HomePage() {
             </button>
           ))}
       </div>
-      <section className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 min-h-full mx-auto w-full'>
-        {isLoading && <div>Loading...</div>}
+      <section className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-auto w-full'>
         {!isLoading && displayedData.map((tool) => 
           <Card key={tool.tool_id} tool={tool} />)}
-        {filteredData.length === 0 && (
-          <div className='flex items-center justify-center h-48 w-full text-4xl font-bold opacity-20 text-center'>
-            <span className='text-center'>No Tools Found</span>
-          </div>
-        )}
       </section>
-      {initialView && showAllButton && (
-          <button
-            onClick={showAllItems}
-            className='bg-[#161616] text-white px-4 py-2 rounded-md mt-4 mx-auto block'
-          >
-            Show All Items
-          </button>
-        )}
+      {filteredData.length === 0 && (
+        <div className='flex items-center justify-center h-48 w-full text-4xl font-bold opacity-20 text-center'>
+          <span className='text-center'>No Tools Found</span>
+        </div>
+      )}
     </div>
   );
 }
