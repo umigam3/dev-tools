@@ -46,21 +46,22 @@ export default function LoginPage() {
       {/* <span className="font-bold text-2xl mb-8">AllTools</span> */}
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col justify-center items-center px-8 md:px-14 py-10 bg-[#161616] border-[#3F3F46]/10 border-0 rounded-xl max-w-[30rem] w-full"
+        className="flex flex-col justify-center items-center px-8 md:px-14 pb-10 bg-[#121212] border-[#3F3F46]/10 border-0 rounded-xl max-w-[30rem] w-full"
       >
-        <img src="/logo.svg" width="75" className="mb-2" />
-        <div className="flex flex-col gap-y-3 items-center mb-14">
-          <h1 className="text-2xl font-medium">Log in</h1>
+        {/* <img src="/logo.svg" width="75" className="mb-1" /> */}
+        <div className="flex flex-col gap-y-3 items-center mb-10">
+          <h1 className="text-3xl font-normal">Sign in into AllTools</h1>
         </div>
         {error && <p className="text-red-500 mb-4">{error}</p>}
-        <div className="mb-3 w-full">
+        <div className="mb-4 w-full">
           <Input
             color="dark"
             className=""
             variant="bordered"
             type="email"
             label="Email"
-            size="md"
+            // size="sm"
+            // radius="md"
             // placeholder="Enter your email"
             id="email"
             value={email}
@@ -72,12 +73,13 @@ export default function LoginPage() {
             isRequired
           />
         </div>
-        <div className="mb-5 w-full">
+        <div className="mb-9 w-full">
           <Input
             variant="bordered"
             label="Password"
             id="password"
-            size="md"
+            // size="sm"
+            // radius="md"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             // placeholder="Enter your password"
@@ -104,14 +106,14 @@ export default function LoginPage() {
           isLoading={isSubmitting}
           type="submit"
           color="primary"
-          className="text-lg w-full mb-16 py-6 px-8 bg-gradient-to-r from-pink-600 to-purple-400 text-white rounded-xxl font-medium"
+          className="text-lg w-full mb-16 py-7 px-8 bg-gradient-to-r from-[#DB2677] to-[#b24dda] text-white rounded-xxl font-medium"
         >
           {isSubmitting ? "Logging in..." : "Log in"}
         </Button>
         <div className="w-full text-center mb-10">
           <span className="text-sm">
             No accout?{" "}
-            <a href="/signup" className="text-pink-500 hover:underline">
+            <a href="/signup" className="text-pink-500 underline">
               Sign up
             </a>
           </span>

@@ -47,21 +47,22 @@ export default function SignUpPage() {
   const toggleVisibility = () => setIsVisible(!isVisible);
 
   return (
-    <main className="max-w-6xl mx-auto flex flex-col items-center min-h-[calc(100vh-112px)] py-6">
+    <main className="mx-auto flex flex-col items-center min-h-[calc(100vh-112px)] py-6 bg-[#121212]">
       {/* <span className="font-bold text-2xl mb-8">AllTools</span> */}
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col justify-center items-center px-8 md:px-14 py-10 bg-[#161616] border-[#3F3F46]/10 border-0 rounded-xl max-w-[30rem] w-full"
+        className="flex flex-col justify-center items-center px-8 md:px-14 py-10 bg-[#121212] border-[#3F3F46]/10 border-0 rounded-xl max-w-[30rem] w-full"
       >
-        <img src="/logo.svg" width="75" className="mb-2" />
-        <div className="flex flex-col gap-y-3 items-center mb-14">
-          <h1 className="text-2xl font-medium">Sign up</h1>
+        {/* <img src="/logo.svg" width="75" className="mb-2" /> */}
+        <div className="flex flex-col gap-y-3 items-center mb-10">
+          <h1 className="text-3xl font-normal">Sign up for AllTools</h1>
         </div>
         {error && <p className="text-red-500 mb-4">{error}</p>}
-        <div className="mb-3 w-full">
+        <div className="mb-4 w-full">
           <Input
             color="dark"
             className=""
+            // size="sm"
             variant="bordered"
             type="text"
             label="Username"
@@ -72,7 +73,7 @@ export default function SignUpPage() {
             isRequired
           />
         </div>
-        <div className="mb-3 w-full">
+        <div className="mb-4 w-full">
           <Input
             color="dark"
             className=""
@@ -90,7 +91,7 @@ export default function SignUpPage() {
             }}
           />
         </div>
-        <div className="mb-5 w-full">
+        <div className="mb-9 w-full">
           <Input
             variant="bordered"
             label="Password"
@@ -122,14 +123,14 @@ export default function SignUpPage() {
           isLoading={isSubmitting}
           type="submit"
           color="primary"
-          className="text-lg w-full mb-16 py-6 px-8 bg-gradient-to-r from-pink-600 to-purple-400 text-white rounded-xxl font-medium"
+          className="text-lg w-full mb-16 py-7 px-8 bg-gradient-to-r from-[#DB2677] to-[#b24dda] text-white rounded-xxl font-medium"
         >
           {isSubmitting ? "Creating account..." : "Create account"}
         </Button>
         <div className="w-full text-center mb-10">
           <span className="text-center text-sm">
             Already have an account?{" "}
-            <a href="/login" className="text-pink-500 hover:underline">
+            <a href="/login" className="text-pink-500 underline">
               Log in
             </a>
           </span>
