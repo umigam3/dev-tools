@@ -47,7 +47,8 @@ export default function SignUpPage() {
   const toggleVisibility = () => setIsVisible(!isVisible);
 
   return (
-    <main className="max-w-6xl mx-auto flex flex-col items-center min-h-[calc(100vh-112px)] py-6">
+    
+    <main className="max-w-6xl mx-auto flex flex-col items-center min-h-[calc(100vh-112px)] py-20">
       {/* <span className="font-bold text-2xl mb-8">AllTools</span> */}
       <form
         onSubmit={handleSubmit}
