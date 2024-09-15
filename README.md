@@ -17,38 +17,6 @@
 
 </div>
 
-## 🚀 Getting Started
-
-1. [Fork](https://github.com/umigam3/dev-tools/fork) this repository and clone it locally:
-
-```bash
-git clone git@github.com:your_username/dev-tools.git
-```
-
-2. Install dependencies:
-
-```bash
-npm install
-```
-
-3. Go to the [**`src/data/data.json`**](https://github.com/umigam3/dev-tools/blob/main/src/data/data.json) file and add the information about the tool, following this structure:
-
-```json
-{
-    "name": "Name",
-    "description": "Short description about the tool.",
-    "url": "https://url_to_tool.example/",
-    "tags": ["Example 1", "Example 2", "Example 3"]
-}
-```
-
-> [!NOTE]
->
-> - Please review the existing tags in the other tools and try to use meaningful categories, if two are very similar, use the one that already exists to avoid creating low-value categories.
-> - You can add multiple categories to the same tool, for example: `"tags": ["UI", "Design"]`.
-
-And create a pull request with your tool 🚀.
-
 ## 👨‍💻 Contributors
 
 <a href="https://github.com/umigam3/dev-tools/graphs/contributors">
