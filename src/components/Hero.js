@@ -2,14 +2,17 @@ import Arrow from "@/icons/Arrow";
 
 export default function Hero() {
   return (
-    <section className="h-[80vh] mt-[10vh] px-4 mx-auto max-w-screen-xl text-center lg:px-12 flex flex-col">
-      <h1 className="mb-6 text-4xl font-black tracking-tight md:text-5xl lg:text-7xl text-white md:px-32">
-        Developer tools to make your life{" "}
-        <span className="bg-gradient-to-r from-pink-600 to-purple-400 inline-block text-transparent bg-clip-text">
-          easier
-        </span>
+    <section className="h-[80vh] mt-[5vh] px-4 mx-auto max-w-screen-xl text-center lg:px-12 flex flex-col">
+      <h1 className="mb-28 text-4xl font-medium tracking-tight md:text-5xl lg:text-6xl text-white md:px-10">
+        <span className="tracking-tighter font-black text-8xl bg-gradient-to-r from-pink-600 to-purple-400 inline-block text-transparent bg-clip-text">
+          Developer tools
+        </span>{" "}
+        <br />
+        to make your life <span className="">easier</span>
+        {/* <span className="bg-gradient-to-r from-pink-600 to-purple-400 inline-block text-transparent bg-clip-text"> */}
+        {/* </span>{" "} */}
       </h1>
-      <p className="mb-44 text-base font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-40">
+      <p className="mb-10 text-base font-normal text-gray-300 lg:text-base sm:px-16 xl:px-60">
         A collection of coding tools designed to simplify developers lives and
         boost productivity.
       </p>
