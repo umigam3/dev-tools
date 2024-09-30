@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-const {nextui} = require("@nextui-org/react");
+const { nextui } = require("@nextui-org/react");
 
 module.exports = {
   content: [
@@ -10,6 +10,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontSize: {
+        base: "18px", // Example: redefine text-base to 18px
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -18,11 +21,11 @@ module.exports = {
       dropShadow: {
         glow: [
           "0 0px 20px rgba(255,255, 255, 0.35)",
-          "0 0px 65px rgba(255, 255,255, 0.2)"
-        ]
-      }    
+          "0 0px 65px rgba(255, 255,255, 0.2)",
+        ],
+      },
     },
   },
   darkMode: "class",
-  plugins: [nextui()]
+  plugins: [nextui()],
 };
