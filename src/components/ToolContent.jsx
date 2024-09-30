@@ -1,21 +1,21 @@
-'use client';
+"use client";
 
-import { useEffect, useState, useMemo } from 'react';
-import Card from '@/components/Card';
-import axios from 'axios';
+import { useEffect, useState, useMemo } from "react";
+import Card from "@/components/Card";
+import axios from "axios";
 import { Input } from "@nextui-org/input";
-import { SearchIcon } from './ui/SearchIcon';
+import { SearchIcon } from "./ui/SearchIcon";
 
 export default function HomePage() {
   const [data, setData] = useState(null);
   const [tags, setTags] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
   const [selectedTags, setSelectedTags] = useState([]);
   const [initialView, setInitialView] = useState(true);
   const [showAllButton, setShowAllButton] = useState(false);
 
-  const baseURL = 'http://192.168.1.48:3001';
+  const baseURL = "http://192.168.1.48:3001";
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,7 +37,6 @@ export default function HomePage() {
     };
 
     fetchTags();
-
   }, []);
 
   const handleSearchChange = (event) => {
@@ -68,10 +67,11 @@ export default function HomePage() {
   }, [initialView, filteredData]);
 
   return (
-    <div className='min-h-[calc(100dvh-400px)] w-full'>
-      <div className='w-full mb-2'>
+    <div className="min-h-[calc(100dvh-400px)] w-full ">
+      <div className=" w-1/2 mx-auto mb-2">
         <Input
-          radius="lg"
+          radius="sm"
+          size="lg"
           classNames={{
             label: "text-black/50 dark:text-white/90",
             input: [
@@ -93,7 +93,7 @@ export default function HomePage() {
               "!cursor-text",
             ],
           }}
-          placeholder={`Search among ${filteredData.length} items...`}
+          placeholder={`Search among ${filteredData.length} tools...`}
           value={searchQuery}
           onChange={handleSearchChange}
           startContent={
@@ -102,31 +102,30 @@ export default function HomePage() {
           onClear={() => {
             setSearchQuery("");
           }}
-        isClearable
+          isClearable
         />
-
       </div>
-      <div className='w-full mb-2 flex flex-wrap gap-2'>
-          {tags.map((tag) => (
-            <button
-              key={tag.tag_id}
-              className={`px-4 py-2 rounded-3xl border-gray-700 border text-sm ${
-                selectedTags.includes(tag)
-                  ? 'bg-white text-black'
-                  : 'bg-[#161616] text-white'
-              }`}
-            >
-              {tag.name}
-            </button>
-          ))}
+      <div className="w-full mb-2 flex flex-wrap gap-2">
+        {tags.map((tag) => (
+          <button
+            key={tag.tag_id}
+            className={`px-4 py-2 rounded-3xl border-gray-700 border text-sm ${
+              selectedTags.includes(tag)
+                ? "bg-white text-black"
+                : "bg-[#161616] text-white"
+            }`}
+          >
+            {tag.name}
+          </button>
+        ))}
       </div>
-      <section className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-auto w-full'>
-        {!isLoading && displayedData.map((tool) => 
-          <Card key={tool.tool_id} tool={tool} />)}
+      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-auto w-full">
+        {!isLoading &&
+          displayedData.map((tool) => <Card key={tool.tool_id} tool={tool} />)}
       </section>
       {filteredData.length === 0 && (
-        <div className='flex items-center justify-center h-48 w-full text-4xl font-bold opacity-20 text-center'>
-          <span className='text-center'>No Tools Found</span>
+        <div className="flex items-center justify-center h-48 w-full text-4xl font-bold opacity-20 text-center">
+          <span className="text-center">No Tools Found</span>
         </div>
       )}
     </div>

@@ -111,7 +111,7 @@ export default function LoginPage() {
           {isSubmitting ? "Logging in..." : "Log in"}
         </Button>
         <div className="w-full text-center mb-10">
-          <span className="text-sm">
+          <span className="text-lg">
             No accout?{" "}
             <a href="/signup" className="text-pink-500 underline">
               Sign up
