@@ -68,7 +68,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-[calc(100dvh-400px)] w-full ">
-      <div className=" w-1/2 mx-auto mb-2">
+      <div className=" w-[60%] mx-auto mb-2">
         <Input
           radius="sm"
           size="lg"
@@ -93,7 +93,7 @@ export default function HomePage() {
               "!cursor-text",
             ],
           }}
-          placeholder={`Search among ${filteredData.length} tools...`}
+          placeholder={`Search among ${filteredData.length} tools`}
           value={searchQuery}
           onChange={handleSearchChange}
           startContent={
