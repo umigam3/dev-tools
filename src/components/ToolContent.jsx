@@ -15,7 +15,7 @@ export default function HomePage() {
   const [initialView, setInitialView] = useState(true);
   const [showAllButton, setShowAllButton] = useState(false);
 
-  const baseURL = "http://192.168.1.48:3001";
+  const baseURL = "http://localhost:3001";
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,7 +26,6 @@ export default function HomePage() {
 
       setIsLoading(false);
     };
-
     fetchData();
   }, []);
 
@@ -34,6 +33,7 @@ export default function HomePage() {
     const fetchTags = async () => {
       const response = await axios.get(`${baseURL}/tags`);
       setTags(response.data.tags);
+      setSelectedTags([response.data.tags[0], response.data.tags[1]]);
     };
 
     fetchTags();
@@ -50,14 +50,14 @@ export default function HomePage() {
   };
 
   const filteredData = useMemo(() => {
-    return data
-      ? data.filter(
-          (tool) =>
-            tool.title.toLowerCase().includes(searchQuery.toLowerCase()) &&
-            (selectedTags.length === 0 ||
-              selectedTags.every((tag) => tool.tags.includes(tag)))
-        )
-      : [];
+    return data ?? [];
+    // ? data.filter(
+    //     (tool) =>
+    //       tool.title.toLowerCase().includes(searchQuery.toLowerCase()) &&
+    //       (selectedTags.length === 0 ||
+    //         selectedTags.every((tag) => tool.tags.includes(tag)))
+    //   )
+    // : [];
   }, [data, searchQuery, selectedTags]);
 
   const displayedData = initialView ? filteredData.slice(0, 30) : filteredData;
@@ -68,28 +68,25 @@ export default function HomePage() {
 
   return (
     <div className="min-h-[calc(100dvh-400px)] w-full ">
-      <div className=" w-[60%] mx-auto mb-2">
+      <div className="w-[60%] mx-auto mb-3">
         <Input
-          radius="sm"
           size="lg"
+          variant="bordered"
+          color="dark"
           classNames={{
-            label: "text-black/50 dark:text-white/90",
+            label: "text-black/50 dark:text-[#f1f1f1]/90",
             input: [
               "bg-transparent",
-              "text-black/90 dark:text-white/90",
-              "placeholder:text-default-700/50 dark:placeholder:text-white/60",
+              "text-base",
+              "text-black/90 dark:text-[#f1f1f1]/90",
+              "placeholder:text-default-700/50 dark:placeholder:text-[#f1f1f1]/60",
             ],
             innerWrapper: "bg-transparent",
             inputWrapper: [
-              "shadow-xl",
-              "bg-default-200/50",
-              "dark:bg-default/60",
-              "backdrop-blur-xl",
-              "backdrop-saturate-200",
-              "hover:bg-default-200/70",
-              "dark:hover:bg-default/70",
-              "group-data-[focus=true]:bg-default-200/50",
-              "dark:group-data-[focus=true]:bg-default/60",
+              "border-1",
+              "text-base",
+              "bg-transparent",
+              "border-[#525252]",
               "!cursor-text",
             ],
           }}
@@ -97,7 +94,7 @@ export default function HomePage() {
           value={searchQuery}
           onChange={handleSearchChange}
           startContent={
-            <SearchIcon className="text-black/50 mb-0.5 dark:text-white/90 text-slate-400 pointer-events-none flex-shrink-0" />
+            <SearchIcon className="text-[#f1f1f1]/60 mb-0.5 dark:text-[#f1f1f1]/90 pointer-events-none flex-shrink-0" />
           }
           onClear={() => {
             setSearchQuery("");
@@ -105,27 +102,27 @@ export default function HomePage() {
           isClearable
         />
       </div>
-      <div className="w-full mb-2 flex flex-wrap gap-2">
+      <div className="w-[60%] mx-auto mb-16 pl-2 flex flex-wrap gap-2">
         {tags.map((tag) => (
           <button
             key={tag.tag_id}
-            className={`px-4 py-2 rounded-3xl border-gray-700 border text-sm ${
+            className={`px-4 py-1 rounded-3xl border-[#525252] border text-[13px] font-normal ${
               selectedTags.includes(tag)
-                ? "bg-white text-black"
-                : "bg-[#161616] text-white"
+                ? "bg-[#f1f1f1] text-[#121212] border-0"
+                : "text-[#f1f1f1]"
             }`}
           >
             {tag.name}
           </button>
         ))}
       </div>
-      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-auto w-full">
+      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-9 mx-auto w-full">
         {!isLoading &&
           displayedData.map((tool) => <Card key={tool.tool_id} tool={tool} />)}
       </section>
       {filteredData.length === 0 && (
         <div className="flex items-center justify-center h-48 w-full text-4xl font-bold opacity-20 text-center">
-          <span className="text-center">No Tools Found</span>
+          <span className="text-center">No tools found</span>
         </div>
       )}
     </div>

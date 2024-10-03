@@ -23,6 +23,7 @@ html {
   background-color: #121212;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 img,
@@ -55,6 +56,28 @@ h6 {
 #__next {
   isolation: isolate;
 }
+
+@layer utilities {
+  .text-gradient {
+    background-image: linear-gradient(
+      140deg,
+      #e50b4c 0%,
+      /* #3696fc 0%, */ #bd13f6 100%
+    );
+    background-clip: text; /* Ensure text is clipped to the gradient */
+    -webkit-background-clip: text; /* For Safari */
+    color: transparent; /* Make text transparent to show the gradient */
+  }
+
+  .bg-gradient {
+    background-image: linear-gradient(
+      140deg,
+      #e50b4c 0%,
+      /* #3696fc 0%, */ #bd13f6 100%
+    );
+  }
+}
+
 /* .dm_sans {
   font-family: var(--font-dm_sans);
 }
