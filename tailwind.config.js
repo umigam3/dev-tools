@@ -11,7 +11,12 @@ module.exports = {
   theme: {
     extend: {
       fontSize: {
-        base: "18px", // Example: redefine text-base to 18px
+        base: "16px",
+        title: "20px",
+      },
+      fontFamily: {
+        dm_sans: ["var(--font-dm_sans)"],
+        space_grotesk: ["var(--font-space_grotesk)"],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

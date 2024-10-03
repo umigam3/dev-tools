@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Grotesk:wght@300..700&display=swap");
 
 *,
 *::before,
@@ -18,7 +18,7 @@
 
 body,
 html {
-  font-family: "Space Grotesk", sans-serif;
+  /* font-family: "DM Sans", sans-serif; */
   color: #f3f3f3;
   background-color: #121212;
   line-height: 1.5;
@@ -55,3 +55,10 @@ h6 {
 #__next {
   isolation: isolate;
 }
+/* .dm_sans {
+  font-family: var(--font-dm_sans);
+}
+
+.space_grotesk {
+  font-family: var(--font-space_grotesk);
+} */

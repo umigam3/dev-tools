@@ -1,9 +1,13 @@
-import { Space_Grotesk, DM_Sans } from "next/font/google";
+import { Space_Grotesk, DM_Sans, Barlow } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "./globals.css";
 
-const font = Space_Grotesk({ subsets: ["latin"] });
+const dm_sans = DM_Sans({ subsets: ["latin"], variable: "--font-dm_sans" });
+const space_grotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-space_grotesk",
+});
 
 export const metadata = {
   title: "AllTools.dev - A complete collection of developer tools",
@@ -17,7 +21,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="dark">
-      <body className={font.className}>
+      <body
+        className={`${dm_sans.variable} ${space_grotesk.variable} font-dm_sans`}
+      >
         <Header />
         {children}
         <Footer />
