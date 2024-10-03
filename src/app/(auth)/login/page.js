@@ -71,6 +71,7 @@ export default function LoginPage() {
               setEmail("");
             }}
             isRequired
+            classNames={{ inputWrapper: ["border-1"] }}
           />
         </div>
         <div className="mb-9 w-full">
@@ -100,13 +101,14 @@ export default function LoginPage() {
             }
             type={isVisible ? "text" : "password"}
             isRequired
+            classNames={{ inputWrapper: ["border-1"] }}
           />
         </div>
         <Button
           isLoading={isSubmitting}
           type="submit"
           color="primary"
-          className="text-lg w-full mb-16 py-7 px-8 bg-gradient-to-r from-[#DB2677] to-[#b24dda] text-white rounded-xxl font-medium"
+          className="text-lg w-[98%] mb-16 py-7 px-8 bg-gradient text-[#f1f1f1] rounded-xxl font-medium"
         >
           {isSubmitting ? "Logging in..." : "Log in"}
         </Button>

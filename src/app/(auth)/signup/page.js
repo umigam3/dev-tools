@@ -123,7 +123,7 @@ export default function SignUpPage() {
           isLoading={isSubmitting}
           type="submit"
           color="primary"
-          className="text-lg w-full mb-16 py-7 px-8 bg-gradient-to-r from-[#DB2677] to-[#b24dda] text-white rounded-xxl font-medium"
+          className="text-lg w-full mb-16 py-7 px-8 bg-gradient-to-r from-[#DB2677] to-[#b24dda] text-[#f1f1f1] rounded-xxl font-medium"
         >
           {isSubmitting ? "Creating account..." : "Create account"}
         </Button>
