@@ -22,6 +22,8 @@ module.exports = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "custom-gradient":
+          "linear-gradient(140deg, #E50B6D 12.8%, #B11EEB 43.52%, #4336FC 84.34%)",
       },
       dropShadow: {
         glow: [
