@@ -85,3 +85,33 @@ h6 {
 .space_grotesk {
   font-family: var(--font-space_grotesk);
 } */
+
+.selectedTag {
+  background-image: linear-gradient(145deg, #aaa 20%, #f1f1f1 80%);
+}
+
+.card {
+  /* border-radius: 46px; */
+  /* background: white; */
+  /* box-shadow: 7px 7px 9px #242424, -7px -7px 9px #1f1f1f; */
+  /* background: #121212; */
+  /* background-image: linear-gradient(90deg, #1f1f1f 20%, #292929 100%); */
+  /* background-image: linear-gradient(145deg, #181818 20%, #202020 80%); */
+  background-image: linear-gradient(145deg, #1f1f1f 20%, #202020 80%);
+  background-attachment: fixed;
+  /* box-shadow: 4px 4px 16px -5px #090909; */
+  box-shadow: 8px 10px 16px -5px #090909;
+  /* box-shadow: 5px 5px 16px 3px #090909; */
+
+  /* -1px -1px 20px -5px #555555; */
+  /* box-shadow: 8px 8px 16px #080808, -8px -8px 16px #111111; */
+}
+
+.link-container {
+  column-gap: 0;
+  transition: all 150ms;
+}
+
+.link:hover .link-container {
+  column-gap: 0.25rem;
+}
