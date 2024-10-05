@@ -50,20 +50,42 @@ export default function LogIn({ setShowLogIn }) {
       className="flex flex-row items-center justify-center z-50 fixed top-0 h-[100vh] w-[100vw] backdrop-blur-[0px] bg-black/50"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ type: "spring", stiffness: 500, damping: 30 }}
+      exit={{
+        opacity: 0,
+
+        transition: {
+          opacity: {
+            ease: [0.32, 0, 0.67, 0],
+            duration: 0.25, // exit transition
+          },
+        },
+      }}
+      transition={{ ease: [0.33, 1, 0.68, 1], duration: 0.5 }}
     >
       <motion.form
         onSubmit={handleSubmit}
         className=" flex flex-col justify-center items-center px-8 md:px-14 pb-10 card border-[#3F3F46]/10 border-0 rounded-2xl max-w-[25rem] w-full"
-        initial={{ scale: 0, opacity: 0 }}
+        initial={{ scale: 0.95, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        exit={{ scale: 0, opacity: 0 }}
-        transition={{ type: "spring", stiffness: 500, damping: 30 }}
+        exit={{
+          scale: 0.95,
+          opacity: 0,
+
+          transition: {
+            opacity: {
+              ease: [0.32, 0, 0.67, 0],
+              duration: 0.25, // exit transition
+            },
+          },
+        }}
+        transition={{
+          ease: [0.33, 1, 0.68, 1],
+          duration: 0.25, // animate transition
+        }}
       >
         {/* <img src="/logo.svg" width="75" className="mb-1" /> */}
         <div className="w-full flex flex-col items-end pt-6 pb-4 ml-10">
-          <button onClick={() => setShowLogIn(false)}>
+          <button type="button" onClick={() => setShowLogIn(false)}>
             <Close />
           </button>
         </div>
