@@ -115,3 +115,13 @@ h6 {
 .link:hover .link-container {
   column-gap: 0.25rem;
 }
+
+::-moz-selection {
+  /* color: red; */
+  background: #d50e97;
+}
+
+::selection {
+  /* color: red; */
+  background: #d50e97;
+}
