@@ -71,7 +71,7 @@ export default function LogIn({ setShowLogIn }) {
           <h1 className="text-title font-bold font-space_grotesk">Sign in</h1>
         </div>
         {error && <p className="text-red-500 mb-4">{error}</p>}
-        <div className="mb-3 w-11/12">
+        <div className="mb-3 w-11/12 z-20 relative">
           <Input
             color="dark"
             variant="bordered"
