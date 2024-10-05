@@ -32,7 +32,9 @@ export default function RootLayout({ children }) {
       >
         {/* <LogInContext.Provider value={setShowLogIn}> */}
         <Header setShowLogIn={setShowLogIn} />
-        <AnimatePresence>{showLogIn && <LogIn />}</AnimatePresence>
+        <AnimatePresence>
+          {showLogIn && <LogIn setShowLogIn={setShowLogIn} />}
+        </AnimatePresence>
 
         {children}
         <Footer />
