@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import LogIn from "@/components/LogIn";
 import "./globals.css";
 import { useState } from "react";
+import { delay, motion, AnimatePresence } from "framer-motion";
 
 const dm_sans = DM_Sans({ subsets: ["latin"], variable: "--font-dm_sans" });
 const space_grotesk = Space_Grotesk({
@@ -31,7 +32,7 @@ export default function RootLayout({ children }) {
       >
         {/* <LogInContext.Provider value={setShowLogIn}> */}
         <Header setShowLogIn={setShowLogIn} />
-        {showLogIn && <LogIn />}
+        <AnimatePresence>{showLogIn && <LogIn />}</AnimatePresence>
 
         {children}
         <Footer />

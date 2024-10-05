@@ -12,6 +12,9 @@ import { Button } from "@nextui-org/button";
 import { EyeSlashFilledIcon } from "@/components/ui/EyeSlashFilledIcon";
 import { EyeFilledIcon } from "@/components/ui/EyeFilledIcon";
 
+// Framer Motion
+import { motion } from "framer-motion";
+
 export default function LogIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -42,10 +45,20 @@ export default function LogIn() {
   const toggleVisibility = () => setIsVisible(!isVisible);
 
   return (
-    <div className="flex flex-row items-center justify-center z-50 fixed top-0 h-[100vh] w-[100vw] backdrop-blur-[0px] bg-black/50">
-      <form
+    <motion.div
+      className="flex flex-row items-center justify-center z-50 fixed top-0 h-[100vh] w-[100vw] backdrop-blur-[0px] bg-black/50"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ type: "spring", stiffness: 500, damping: 30 }}
+    >
+      <motion.form
         onSubmit={handleSubmit}
         className=" flex flex-col justify-center items-center px-8 md:px-14 py-10 card border-[#3F3F46]/10 border-0 rounded-2xl max-w-[25rem] w-full"
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0, opacity: 0 }}
+        transition={{ type: "spring", stiffness: 500, damping: 30 }}
       >
         {/* <img src="/logo.svg" width="75" className="mb-1" /> */}
         <div className="flex flex-col gap-y-3 items-center mb-10">
@@ -168,7 +181,7 @@ export default function LogIn() {
             </a>
           </span>
         </div>
-      </form>
-    </div>
+      </motion.form>
+    </motion.div>
   );
 }
