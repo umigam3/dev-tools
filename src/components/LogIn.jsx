@@ -47,7 +47,7 @@ export default function LogIn({ setShowLogIn }) {
 
   return (
     <motion.div
-      className="flex flex-row items-center justify-center z-50 fixed top-0 h-[100vh] w-full backdrop-blur-[0px] bg-black/50"
+      className="flex flex-row items-center justify-center z-40 fixed top-0 h-[100vh] w-full backdrop-blur-[0px] bg-black/50"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{
@@ -84,13 +84,19 @@ export default function LogIn({ setShowLogIn }) {
         }}
       >
         {/* <img src="/logo.svg" width="75" className="mb-1" /> */}
-        <div className="w-full flex flex-col items-end pt-6 pb-4 ml-10">
-          <button type="button" onClick={() => setShowLogIn(false)}>
-            <Close />
+        <div className="w-full flex flex-col items-end pt-5 pb-2 ml-14 ">
+          <button
+            type="button"
+            onClick={() => setShowLogIn(false)}
+            className="hover:bg-white/15 rounded-full p-2"
+          >
+            <Close className="text-gray-100" />
           </button>
         </div>
         <div className="flex flex-col gap-y-3 items-center mb-10">
-          <h1 className="text-title font-bold font-space_grotesk">Sign in</h1>
+          <h1 className="text-title font-bold font-space_grotesk">
+            Welcome back!
+          </h1>
         </div>
         {error && <p className="text-red-500 mb-4">{error}</p>}
         <div className="mb-3 w-11/12 z-20 relative">

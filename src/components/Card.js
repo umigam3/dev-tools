@@ -9,6 +9,8 @@ export default function Card({ tool }) {
           {tool.title}
         </h2>
         <button>
+          {/* <button className="hover:hover:bg-white/15 py-2 px- rounded-full group"> */}
+
           <Bookmark className="mb-1 text-transparent hover:text-[#f1f1f1]" />
         </button>
       </div>
