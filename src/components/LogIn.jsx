@@ -16,7 +16,7 @@ import { EyeFilledIcon } from "@/components/ui/EyeFilledIcon";
 // Framer Motion
 import { motion } from "framer-motion";
 
-export default function LogIn({ setShowLogIn }) {
+export default function LogIn({ setShowLogIn, setShowSignUp }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -47,7 +47,7 @@ export default function LogIn({ setShowLogIn }) {
 
   return (
     <motion.div
-      className="flex flex-row items-center justify-center z-40 fixed top-0 h-[100vh] w-full backdrop-blur-[0px] bg-black/50"
+      className="flex flex-row justify-center z-40 fixed top-0 h-[100vh] w-full backdrop-blur-[0px] bg-black/80"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{
@@ -64,7 +64,7 @@ export default function LogIn({ setShowLogIn }) {
     >
       <motion.form
         onSubmit={handleSubmit}
-        className=" flex flex-col justify-center items-center px-8 md:px-14 pb-10 mt-10 modal border-[#3F3F46]/10 border-0 rounded-2xl max-w-[25rem] w-full"
+        className=" flex flex-col justify-center items-center px-8 md:px-14 pb-10 my-48 modal border-[#3F3F46]/10 border-0 rounded-2xl max-w-[25rem] w-full"
         initial={{ scale: 0.95, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         exit={{
@@ -84,15 +84,13 @@ export default function LogIn({ setShowLogIn }) {
         }}
       >
         {/* <img src="/logo.svg" width="75" className="mb-1" /> */}
-        <div className="w-full flex flex-col items-end pt-5 pb-2 ml-14 ">
-          <button
-            type="button"
-            onClick={() => setShowLogIn(false)}
-            className="hover:bg-white/15 rounded-full p-2"
-          >
-            <Close className="text-gray-100" />
-          </button>
-        </div>
+        <button
+          type="button"
+          onClick={() => setShowLogIn(false)}
+          className="hover:bg-white/15 rounded-full p-2 absolute top-4 right-5"
+        >
+          <Close className="text-gray-100" />
+        </button>
         <div className="flex flex-col gap-y-3 items-center mb-10">
           <h1 className="text-title font-bold font-space_grotesk">
             Welcome back!
@@ -140,7 +138,7 @@ export default function LogIn({ setShowLogIn }) {
                 "py-0",
                 "text-2xl",
               ],
-              input: ["pl-2"],
+              input: ["pl-2", "text-base"],
             }}
           />
         </div>
@@ -195,7 +193,7 @@ export default function LogIn({ setShowLogIn }) {
                 "py-0",
                 "text-2xl",
               ],
-              input: ["pl-2"],
+              input: ["pl-2", "text-base"],
             }}
           />
         </div>
@@ -210,9 +208,18 @@ export default function LogIn({ setShowLogIn }) {
         <div className="w-full text-center mb-6">
           <span className="text-[13px]">
             No accout?{" "}
-            <a href="/signup" className="text-pink-500 underline">
+            <button
+              type="button"
+              onClick={() => {
+                setShowLogIn(false);
+                setTimeout(() => {
+                  setShowSignUp(true);
+                }, 300);
+              }}
+              className="text-pink-500 underline"
+            >
               Register for free!
-            </a>
+            </button>
           </span>
         </div>
       </motion.form>
