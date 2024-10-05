@@ -2,7 +2,7 @@ import Arrow from "@/icons/Arrow";
 
 export default function Hero() {
   return (
-    <section className=" mb-24 mt-[2vh] px-4 mx-auto max-w-screen-xl text-center lg:px-12 flex flex-col z-20 relative">
+    <section className=" mb-24 mt-[12vh] px-4 mx-auto max-w-screen-xl text-center lg:px-12 flex flex-col z-20 relative">
       <h1 className="font-space_grotesk text-4xl font-medium tracking-tight md:text-4xl lg:text-4xl text-[#f1f1f1] md:px-40 leading-none">
         <span className="text-[2.15rem] tracking-tighter">
           Boost your productivity with a collection of
