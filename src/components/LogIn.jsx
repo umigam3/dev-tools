@@ -47,7 +47,7 @@ export default function LogIn({ setShowLogIn }) {
 
   return (
     <motion.div
-      className="flex flex-row items-center justify-center z-50 fixed top-0 h-[100vh] w-[100vw] backdrop-blur-[0px] bg-black/50"
+      className="flex flex-row items-center justify-center z-50 fixed top-0 h-[100vh] w-full backdrop-blur-[0px] bg-black/50"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{
@@ -64,7 +64,7 @@ export default function LogIn({ setShowLogIn }) {
     >
       <motion.form
         onSubmit={handleSubmit}
-        className=" flex flex-col justify-center items-center px-8 md:px-14 pb-10 card border-[#3F3F46]/10 border-0 rounded-2xl max-w-[25rem] w-full"
+        className=" flex flex-col justify-center items-center px-8 md:px-14 pb-10 mt-10 modal border-[#3F3F46]/10 border-0 rounded-2xl max-w-[25rem] w-full"
         initial={{ scale: 0.95, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         exit={{
