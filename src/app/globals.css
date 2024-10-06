@@ -126,11 +126,11 @@ h6 {
 }
 
 ::-moz-selection {
-  /* color: red; */
+  color: white;
   background: #d50e97;
 }
 
 ::selection {
-  /* color: red; */
+  color: white;
   background: #d50e97;
 }
