@@ -2,7 +2,7 @@
 
 // Utility
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // UI
 import { Input } from "@nextui-org/react";
@@ -44,6 +44,22 @@ export default function LogIn({ setShowLogIn, setShowSignUp }) {
   };
 
   const toggleVisibility = () => setIsVisible(!isVisible);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        setShowLogIn(false);
+      }
+    };
+
+    // Attach the event listener
+    window.addEventListener("keydown", handleKeyDown);
+
+    // Clean up the event listener on unmount
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [setShowLogIn]);
 
   return (
     <motion.div
