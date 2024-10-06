@@ -7,9 +7,9 @@ export default function Header({ setShowLogIn, setShowSignUp }) {
       <div className="flex justify-between max-w-7xl w-full mx-auto px-9">
         <a
           href="/"
-          className="flex flex-row items-center text-base font-medium gap-x-2"
+          className="flex flex-row items-center text-base font-space_grotesk font-medium gap-x-1"
         >
-          <img src="/logo.svg" width="30" className="" />
+          <img src="/logo.svg" width="32" className="mt-0.5" />
           Dev Tools
         </a>
 
