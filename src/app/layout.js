@@ -5,7 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import LogIn from "@/components/LogIn";
 import "./globals.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { delay, motion, AnimatePresence } from "framer-motion";
 import SignUp from "@/components/SignUp";
 import { ReactLenis, useLenis } from "lenis/react";
@@ -33,6 +33,13 @@ export default function RootLayout({ children }) {
     // setScroll(scroll);
     // called every scroll
   });
+
+  // Block scroll on modals
+  useEffect(() => {
+    if (lenis !== undefined)
+      showLogIn || showSignUp ? lenis.stop() : lenis.start();
+  }, [showLogIn, showSignUp]);
+
   return (
     <ReactLenis root>
       <html lang="en" className="dark">
