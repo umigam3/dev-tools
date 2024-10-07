@@ -8,7 +8,7 @@ export default function Hero() {
           Boost your productivity with a collection of
         </span>{" "}
         <br />
-        <span className="tracking-tighter -ml-1 font-bold text-8xl text-gradient">
+        <span className="px-1 tracking-tighter -ml-1 font-bold text-8xl text-gradient">
           Developer tools
         </span>{" "}
         <br />
