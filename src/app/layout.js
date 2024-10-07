@@ -8,6 +8,7 @@ import "./globals.css";
 import { useState } from "react";
 import { delay, motion, AnimatePresence } from "framer-motion";
 import SignUp from "@/components/SignUp";
+import { ReactLenis, useLenis } from "lenis/react";
 
 const dm_sans = DM_Sans({ subsets: ["latin"], variable: "--font-dm_sans" });
 const space_grotesk = Space_Grotesk({
@@ -27,29 +28,42 @@ const space_grotesk = Space_Grotesk({
 export default function RootLayout({ children }) {
   const [showLogIn, setShowLogIn] = useState(false);
   const [showSignUp, setShowSignUp] = useState(false);
+
+  const lenis = useLenis(({ scroll }) => {
+    // setScroll(scroll);
+    // called every scroll
+  });
   return (
-    <html lang="en" className="dark">
-      <body
-        className={`${dm_sans.variable} ${space_grotesk.variable} font-dm_sans`}
-      >
-        {/* <LogInContext.Provider value={setShowLogIn}> */}
-        <Header setShowLogIn={setShowLogIn} setShowSignUp={setShowSignUp} />
-        <AnimatePresence>
-          {showLogIn && (
-            <LogIn setShowLogIn={setShowLogIn} setShowSignUp={setShowSignUp} />
-          )}
-        </AnimatePresence>
+    <ReactLenis root>
+      <html lang="en" className="dark">
+        <body
+          className={`${dm_sans.variable} ${space_grotesk.variable} font-dm_sans`}
+        >
+          {/* <LogInContext.Provider value={setShowLogIn}> */}
+          <Header setShowLogIn={setShowLogIn} setShowSignUp={setShowSignUp} />
+          <AnimatePresence>
+            {showLogIn && (
+              <LogIn
+                setShowLogIn={setShowLogIn}
+                setShowSignUp={setShowSignUp}
+              />
+            )}
+          </AnimatePresence>
 
-        <AnimatePresence>
-          {showSignUp && (
-            <SignUp setShowSignUp={setShowSignUp} setShowLogIn={setShowLogIn} />
-          )}
-        </AnimatePresence>
+          <AnimatePresence>
+            {showSignUp && (
+              <SignUp
+                setShowSignUp={setShowSignUp}
+                setShowLogIn={setShowLogIn}
+              />
+            )}
+          </AnimatePresence>
 
-        {children}
-        <Footer />
-        {/* </LogInContext.Provider> */}
-      </body>
-    </html>
+          {children}
+          <Footer />
+          {/* </LogInContext.Provider> */}
+        </body>
+      </html>
+    </ReactLenis>
   );
 }
