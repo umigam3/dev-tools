@@ -37,7 +37,7 @@ export default function LogIn({ setShowLogIn, setShowSignUp }) {
       });
       console.log("Login successful:", response.data);
     } catch (err) {
-      setError("Login failed. Please check your credentials and try again.");
+      setError("Login failed. Check your credentials.");
     } finally {
       setIsSubmitting(false);
     }
@@ -80,7 +80,7 @@ export default function LogIn({ setShowLogIn, setShowSignUp }) {
     >
       <motion.form
         onSubmit={handleSubmit}
-        className=" flex flex-col justify-center items-center px-8 md:px-14 pb-10 my-48 modal border-[#3F3F46]/10 border-0 rounded-2xl max-w-[25rem] w-full"
+        className=" flex flex-col items-center px-8 md:px-14 pb-10 my-48 modal border-[#3F3F46]/10 border-0 rounded-2xl max-w-[25rem] w-full"
         initial={{ scale: 0.95, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         exit={{
@@ -107,12 +107,14 @@ export default function LogIn({ setShowLogIn, setShowSignUp }) {
         >
           <Close className="text-gray-100" />
         </button>
-        <div className="flex flex-col gap-y-3 items-center mb-10">
+        <div className="mb-4  mt-16">
           <h1 className="text-title font-bold font-space_grotesk">
             Welcome back!
           </h1>
         </div>
-        {error && <p className="text-red-500 mb-4">{error}</p>}
+        <div className="h-5 z-40 mb-3 overflow-hidden">
+          {error && <p className="text-red-500 text-[13px] px-4">{error}</p>}
+        </div>
         <div className="mb-3 w-11/12 z-20 relative">
           <Input
             color="dark"
