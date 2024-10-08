@@ -16,6 +16,7 @@ import { EyeFilledIcon } from "@/components/ui/EyeFilledIcon";
 // Framer Motion
 import { AnimatePresence, motion } from "framer-motion";
 import ArrowNext from "@/icons/ArrowNext";
+import ArrowBack from "@/icons/ArrowBack";
 
 export default function SignUp({ setShowSignUp, setShowLogIn }) {
   const [username, setUsername] = useState("");
@@ -109,6 +110,32 @@ export default function SignUp({ setShowSignUp, setShowLogIn }) {
           <Close className="text-gray-100" />
         </button>
 
+        {modalSlide > 0 && (
+          <motion.button
+            initial={{ scale: 0.95, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{
+              scale: 0.95,
+              opacity: 0,
+
+              transition: {
+                opacity: {
+                  ease: [0.32, 0, 0.67, 0],
+                  duration: 0.5, // exit transition
+                },
+              },
+            }}
+            transition={{
+              ease: [0.33, 1, 0.68, 1],
+              duration: 0.5, // animate transition
+            }}
+            type="button"
+            onClick={() => setModalSlide(0)}
+            className="hover:bg-white/15 rounded-full p-2 absolute top-4 left-5 z-50"
+          >
+            <ArrowBack className="text-gray-100" />
+          </motion.button>
+        )}
         <div
           className="absolute h-full w-full flex flex-row carousell"
           style={{ left: `-${100 * modalSlide}%` }}
