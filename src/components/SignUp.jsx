@@ -14,7 +14,7 @@ import { EyeSlashFilledIcon } from "@/components/ui/EyeSlashFilledIcon";
 import { EyeFilledIcon } from "@/components/ui/EyeFilledIcon";
 
 // Framer Motion
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import ArrowNext from "@/icons/ArrowNext";
 
 export default function SignUp({ setShowSignUp, setShowLogIn }) {
@@ -81,7 +81,7 @@ export default function SignUp({ setShowSignUp, setShowLogIn }) {
       transition={{ ease: [0.33, 1, 0.68, 1], duration: 0.5 }}
     >
       <motion.div
-        className="flex flex-col items-center my-48 modal rounded-2xl max-w-[25rem] w-full relative"
+        className="flex flex-col items-center my-48 modal rounded-2xl max-w-[25rem] w-full relative overflow-hidden"
         onSubmit={handleSubmit}
         initial={{ scale: 0.95, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
@@ -101,18 +101,23 @@ export default function SignUp({ setShowSignUp, setShowLogIn }) {
           duration: 0.25, // animate transition
         }}
       >
-        {modalSlide === 0 && (
-          <motion.div className="flex flex-col items-center w-full px-8 md:px-14 pb-10">
-            <button
-              type="button"
-              onClick={() => setShowSignUp(false)}
-              className="hover:bg-white/15 rounded-full p-2 absolute top-4 right-5"
-            >
-              <Close className="text-gray-100" />
-            </button>
+        <button
+          type="button"
+          onClick={() => setShowSignUp(false)}
+          className="hover:bg-white/15 rounded-full p-2 absolute top-4 right-5 z-50"
+        >
+          <Close className="text-gray-100" />
+        </button>
+
+        <div
+          className="absolute h-full w-full flex flex-row carousell"
+          style={{ left: `-${100 * modalSlide}%` }}
+        >
+          {/* START */}
+          <motion.div className="flex flex-col items-center min-w-[100%] px-8 md:px-14 pb-10">
             <div className="mb-4  mt-16">
               <h1 className="text-title font-bold font-space_grotesk">
-                Join Dev Tools!
+                Join Dev Tools for free!
               </h1>
             </div>
             <ul className="flex flex-col gap-4 mt-1 px-4 pb-10 pt-4 rounded-xl bg-[#323232] text-[#f1f1f1] mb-6 w-11/12">
@@ -139,6 +144,7 @@ export default function SignUp({ setShowSignUp, setShowLogIn }) {
               type="button"
               color="primary"
               className="text-base w-11/12 mb-6 py-6 px-8 bg-gradient text-[#f1f1f1] rounded-xxl font-medium"
+              onClick={() => setModalSlide(1)}
             >
               Start
               <ArrowNext />
@@ -161,17 +167,10 @@ export default function SignUp({ setShowSignUp, setShowLogIn }) {
               </span>
             </div>
           </motion.div>
-        )}
-        {modalSlide === 1 && (
-          <motion.form>
+
+          {/* FORM */}
+          <motion.form className="flex flex-col items-center min-w-[100%] w-full px-8 md:px-14 pb-10 ">
             {/* <img src="/logo.svg" width="75" className="mb-1" /> */}
-            <button
-              type="button"
-              onClick={() => setShowSignUp(false)}
-              className="hover:bg-white/15 rounded-full p-2 absolute top-4 right-5"
-            >
-              <Close className="text-gray-100" />
-            </button>
             <div className="mb-4  mt-16">
               <h1 className="text-title font-bold font-space_grotesk">
                 Join Dev Tools!
@@ -335,7 +334,7 @@ export default function SignUp({ setShowSignUp, setShowLogIn }) {
               {isSubmitting ? "Creating..." : "Create account"}
             </Button>
           </motion.form>
-        )}
+        </div>
       </motion.div>
     </motion.div>
   );
