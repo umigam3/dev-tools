@@ -82,7 +82,7 @@ export default function SignUp({ setShowSignUp, setShowLogIn }) {
       transition={{ ease: [0.33, 1, 0.68, 1], duration: 0.5 }}
     >
       <motion.div
-        className="flex flex-col items-center my-48 modal rounded-2xl max-w-[25rem] w-full relative overflow-hidden"
+        className="flex flex-col items-center my-36 modal rounded-2xl max-w-[25rem] w-full relative overflow-hidden"
         onSubmit={handleSubmit}
         initial={{ scale: 0.95, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
@@ -110,44 +110,46 @@ export default function SignUp({ setShowSignUp, setShowLogIn }) {
           <Close className="text-gray-100" />
         </button>
 
-        {modalSlide > 0 && (
-          <motion.button
-            initial={{ scale: 0.95, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{
-              scale: 0.95,
-              opacity: 0,
+        <AnimatePresence>
+          {modalSlide > 0 && (
+            <motion.button
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{
+                scale: 0.95,
+                opacity: 0,
 
-              transition: {
-                opacity: {
-                  ease: [0.32, 0, 0.67, 0],
-                  duration: 0.5, // exit transition
+                transition: {
+                  opacity: {
+                    ease: [0.32, 0, 0.67, 0],
+                    duration: 0.25, // exit transition
+                  },
                 },
-              },
-            }}
-            transition={{
-              ease: [0.33, 1, 0.68, 1],
-              duration: 0.5, // animate transition
-            }}
-            type="button"
-            onClick={() => setModalSlide(0)}
-            className="hover:bg-white/15 rounded-full p-2 absolute top-4 left-5 z-50"
-          >
-            <ArrowBack className="text-gray-100" />
-          </motion.button>
-        )}
+              }}
+              transition={{
+                ease: [0.33, 1, 0.68, 1],
+                duration: 0.5, // animate transition
+              }}
+              type="button"
+              onClick={() => setModalSlide(modalSlide - 1)}
+              className="hover:bg-white/15 rounded-full p-2 absolute top-4 left-5 z-50"
+            >
+              <ArrowBack className="text-gray-100" />
+            </motion.button>
+          )}
+        </AnimatePresence>
         <div
           className="absolute h-full w-full flex flex-row carousell"
           style={{ left: `-${100 * modalSlide}%` }}
         >
           {/* START */}
           <motion.div className="flex flex-col items-center min-w-[100%] px-8 md:px-14 pb-10">
-            <div className="mb-4  mt-16">
+            <div className="mb-12 mt-16">
               <h1 className="text-title font-bold font-space_grotesk">
                 Join Dev Tools for free!
               </h1>
             </div>
-            <ul className="flex flex-col gap-4 mt-1 px-4 pb-10 pt-4 rounded-xl bg-[#323232] text-[#f1f1f1] mb-6 w-11/12">
+            <ul className="flex flex-col gap-4 mt-1 px-4 pb-10 pt-4 rounded-xl bg-[#323232] text-[#f1f1f1] mb-10 w-11/12">
               {/* <p>With an account you will be able to:</p> */}
               <p className="text-center font-medium mb-2">Benefits</p>
               <li className="flex flex-row gap-x-3 ml-3">
@@ -170,7 +172,7 @@ export default function SignUp({ setShowSignUp, setShowLogIn }) {
             <Button
               type="button"
               color="primary"
-              className="text-base w-11/12 mb-6 py-6 px-8 bg-gradient text-[#f1f1f1] rounded-xxl font-medium"
+              className="text-base w-11/12 mb-10 py-6 px-8 bg-gradient text-[#f1f1f1] rounded-xxl font-medium"
               onClick={() => setModalSlide(1)}
             >
               Start
@@ -196,11 +198,12 @@ export default function SignUp({ setShowSignUp, setShowLogIn }) {
           </motion.div>
 
           {/* FORM */}
-          <motion.form className="flex flex-col items-center min-w-[100%] w-full px-8 md:px-14 pb-10 ">
+          {/* <motion.form> */}
+          <div className="flex flex-col items-center min-w-[100%] w-full px-8 md:px-14 pb-10">
             {/* <img src="/logo.svg" width="75" className="mb-1" /> */}
             <div className="mb-4  mt-16">
               <h1 className="text-title font-bold font-space_grotesk">
-                Join Dev Tools!
+                Let’s Sign Up
               </h1>
             </div>
             <div className="h-5 z-40 mb-3 overflow-hidden relative">
@@ -298,6 +301,17 @@ export default function SignUp({ setShowSignUp, setShowLogIn }) {
                 }}
               />
             </div>
+            {/* <Button
+              type="button"
+              color="primary"
+              className="text-base w-11/12 mb-6 py-6 px-8 bg-gradient text-[#f1f1f1] rounded-xxl font-medium"
+              onClick={() => setModalSlide(2)}
+            >
+              Next
+              <ArrowNext />
+            </Button> */}
+            {/* </div> */}
+            {/* <div className="flex flex-col items-center min-w-[100%] w-full px-8 md:px-14 pb-10"> */}
             <div className="mb-10 w-11/12">
               <Input
                 variant="bordered"
@@ -351,6 +365,11 @@ export default function SignUp({ setShowSignUp, setShowLogIn }) {
                   input: ["pl-2", "text-base"],
                 }}
               />
+              <ul className="text-[13px] text-[#aaa] list-disc pl-6 mt-2">
+                <li>Must include numbers.</li>
+                <li>Must include uppercase letters.</li>
+                <li>Must be longer than 8 characters.</li>
+              </ul>
             </div>
             <Button
               isLoading={isSubmitting}
@@ -360,7 +379,8 @@ export default function SignUp({ setShowSignUp, setShowLogIn }) {
             >
               {isSubmitting ? "Creating..." : "Create account"}
             </Button>
-          </motion.form>
+          </div>
+          {/* </motion.form> */}
         </div>
       </motion.div>
     </motion.div>
