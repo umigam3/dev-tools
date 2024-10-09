@@ -106,7 +106,7 @@ export default function SignUp({ setShowSignUp, setShowLogIn }) {
         <button
           type="button"
           onClick={() => setShowSignUp(false)}
-          className="hover:bg-white/15 rounded-full p-2 absolute top-4 right-5 z-50"
+          className="hover:bg-white/10 rounded-full p-2 absolute top-4 right-5 z-50"
         >
           <Close className="text-gray-100" />
         </button>
@@ -133,7 +133,7 @@ export default function SignUp({ setShowSignUp, setShowLogIn }) {
               }}
               type="button"
               onClick={() => setModalSlide(modalSlide - 1)}
-              className="hover:bg-white/15 rounded-full p-2 absolute top-4 left-5 z-50"
+              className="hover:bg-white/10 rounded-full p-2 absolute top-4 left-5 z-50"
             >
               <ArrowBack className="text-gray-100" />
             </motion.button>
@@ -150,7 +150,7 @@ export default function SignUp({ setShowSignUp, setShowLogIn }) {
                 Join Dev Tools for free!
               </h1>
             </div>
-            <ul className="flex flex-col gap-4 mt-1 px-4 pb-10 pt-4 rounded-xl bg-[#323232] text-[#f1f1f1] mb-10 w-11/12">
+            <ul className="flex flex-col gap-4 mt-1 px-4 pb-10 pt-4 rounded-xl bg-white/10 text-[#f1f1f1] mb-10 w-11/12">
               {/* <p>With an account you will be able to:</p> */}
               <p className="text-center font-medium mb-2">Benefits</p>
               <li className="flex flex-row gap-x-3 ml-3">
@@ -214,7 +214,7 @@ export default function SignUp({ setShowSignUp, setShowLogIn }) {
             </div>{" "} */}
             <button
               onClick={() => signIn("google")}
-              className="px-6 py-2.5 w-[90%] border-1 rounded-full border-[#828282] mb-6"
+              className="px-6 py-2.5 w-[90%] border-1 rounded-full border-[#828282] mb-6  hover:bg-white/10"
             >
               Sign up with Google
             </button>

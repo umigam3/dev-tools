@@ -103,7 +103,7 @@ export default function LogIn({ setShowLogIn, setShowSignUp }) {
         <button
           type="button"
           onClick={() => setShowLogIn(false)}
-          className="hover:bg-white/15 rounded-full p-2 absolute top-4 right-5"
+          className="hover:bg-white/10 rounded-full p-2 absolute top-4 right-5"
         >
           <Close className="text-gray-100" />
         </button>
@@ -112,8 +112,19 @@ export default function LogIn({ setShowLogIn, setShowSignUp }) {
             Welcome back!
           </h1>
         </div>
-        <div className="h-5 z-40 mb-3 overflow-hidden">
+        {/* <div className="h-5 z-40 mb-3 overflow-hidden">
           {error && <p className="text-red-500 text-[13px] px-4">{error}</p>}
+        </div> */}
+        <button
+          onClick={() => signIn("google")}
+          className="px-6 py-2.5 w-[90%] border-1 rounded-full border-[#828282] mb-6 hover:bg-white/10"
+        >
+          Sign in with Google
+        </button>
+        <div className="w-full flex flex-row items-center justify-center mb-6">
+          <div className="h-[1px] bg-[#f1f1f1] w-1/3"></div>
+          <p className="px-4">or</p>
+          <div className="h-[1px] bg-[#f1f1f1] w-1/3"></div>
         </div>
         <div className="mb-3 w-11/12 z-20 relative">
           <Input
@@ -236,7 +247,7 @@ export default function LogIn({ setShowLogIn, setShowSignUp }) {
               }}
               className="text-pink-500 underline"
             >
-              Register for free!
+              Join for free!
             </button>
           </span>
         </div>
