@@ -155,15 +155,15 @@ export default function SignUp({ setShowSignUp, setShowLogIn }) {
               <p className="text-center font-medium mb-2">Benefits</p>
               <li className="flex flex-row gap-x-3 ml-3">
                 <img src="/check.svg" height={18} width={18} alt="check" />
-                Save Tools
+                Save tools
               </li>
               <li className="flex flex-row gap-x-3 ml-3">
                 <img src="/check.svg" height={18} width={18} alt="check" />
-                Create Tools
+                Create new tools
               </li>
               <li className="flex flex-row gap-x-3 ml-3">
                 <img src="/check.svg" height={18} width={18} alt="check" />
-                Create Collections
+                Make collections
               </li>
               <li className="flex flex-row gap-x-3 ml-3">
                 <img src="/check.svg" height={18} width={18} alt="check" />
