@@ -103,14 +103,6 @@ export default function SignUp({ setShowSignUp, setShowLogIn }) {
           duration: 0.25, // animate transition
         }}
       >
-        <button
-          type="button"
-          onClick={() => setShowSignUp(false)}
-          className="hover:bg-white/10 rounded-full p-2 absolute top-4 right-5 z-50"
-        >
-          <Close className="text-gray-100" />
-        </button>
-
         <AnimatePresence>
           {modalSlide > 0 && (
             <motion.button
@@ -134,11 +126,20 @@ export default function SignUp({ setShowSignUp, setShowLogIn }) {
               type="button"
               onClick={() => setModalSlide(modalSlide - 1)}
               className="hover:bg-white/10 rounded-full p-2 absolute top-4 left-5 z-50"
+              aria-hidden={modalSlide !== 0}
+              tabIndex={modalSlide === 0 ? -1 : 0}
             >
               <ArrowBack className="text-gray-100" />
             </motion.button>
           )}
         </AnimatePresence>
+        <button
+          type="button"
+          onClick={() => setShowSignUp(false)}
+          className="hover:bg-white/10 rounded-full p-2 absolute top-4 right-5 z-50"
+        >
+          <Close className="text-gray-100" />
+        </button>
         <div
           className="absolute h-full w-full flex flex-row carousell"
           style={{ left: `-${100 * modalSlide}%` }}
@@ -175,6 +176,8 @@ export default function SignUp({ setShowSignUp, setShowLogIn }) {
               color="primary"
               className="text-base w-11/12 mb-10 py-6 px-8 bg-gradient text-[#f1f1f1] rounded-xxl font-medium"
               onClick={() => setModalSlide(1)}
+              aria-hidden={modalSlide !== 0}
+              tabIndex={modalSlide !== 0 ? -1 : 0}
             >
               Start
               <ArrowNext />
@@ -191,6 +194,8 @@ export default function SignUp({ setShowSignUp, setShowLogIn }) {
                     }, 300);
                   }}
                   className="text-pink-500 underline"
+                  aria-hidden={modalSlide !== 0}
+                  tabIndex={modalSlide !== 0 ? -1 : 0}
                 >
                   Sign in
                 </button>
@@ -215,6 +220,8 @@ export default function SignUp({ setShowSignUp, setShowLogIn }) {
             <button
               onClick={() => signIn("google")}
               className="px-6 py-2.5 w-[90%] border-1 rounded-full border-[#828282] mb-6  hover:bg-white/10"
+              aria-hidden={modalSlide !== 1}
+              tabIndex={modalSlide !== 1 ? -1 : 0}
             >
               Sign up with Google
             </button>
@@ -311,6 +318,8 @@ export default function SignUp({ setShowSignUp, setShowLogIn }) {
                   ],
                   input: ["pl-2", "text-base"],
                 }}
+                aria-hidden={modalSlide !== 1}
+                tabIndex={modalSlide !== 1 ? -1 : 0}
               />
             </div>
             {/* <Button
@@ -335,19 +344,20 @@ export default function SignUp({ setShowSignUp, setShowLogIn }) {
                 onChange={(e) => setPassword(e.target.value)}
                 // placeholder="Enter your password"
                 endContent={
-                  <button
-                    className="focus:outline-none"
-                    type="button"
-                    onClick={toggleVisibility}
-                    aria-label="toggle password visibility"
-                  >
-                    {password.length > 0 &&
+                  password.length > 0 && (
+                    <button
+                      className="focus:outline-none"
+                      type="button"
+                      onClick={toggleVisibility}
+                      aria-label="toggle password visibility"
+                    >
                       (isVisible ? (
-                        <EyeFilledIcon className="text-2xl text-default-400 pointer-events-none" />
+                      <EyeFilledIcon className="text-2xl text-default-400 pointer-events-none" />
                       ) : (
-                        <EyeSlashFilledIcon className="text-2xl text-default-400 pointer-events-none" />
-                      ))}
-                  </button>
+                      <EyeSlashFilledIcon className="text-2xl text-default-400 pointer-events-none" />
+                      ))
+                    </button>
+                  )
                 }
                 type={isVisible ? "text" : "password"}
                 // isRequired
@@ -376,6 +386,8 @@ export default function SignUp({ setShowSignUp, setShowLogIn }) {
                   ],
                   input: ["pl-2", "text-base"],
                 }}
+                aria-hidden={modalSlide !== 1}
+                tabIndex={modalSlide !== 1 ? -1 : 0}
               />
               <ul className="text-[13px] text-[#aaa] list-disc pl-6 mt-2">
                 <li>Must include numbers.</li>
@@ -388,6 +400,8 @@ export default function SignUp({ setShowSignUp, setShowLogIn }) {
               type="submit"
               color="primary"
               className="text-base w-11/12 mb-6 py-6 px-8 bg-gradient text-[#f1f1f1] rounded-xxl font-medium"
+              aria-hidden={modalSlide !== 1}
+              tabIndex={modalSlide !== 1 ? -1 : 0}
             >
               {isSubmitting ? "Creating..." : "Create account"}
             </Button>
