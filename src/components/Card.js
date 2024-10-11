@@ -3,15 +3,15 @@ import Bookmark from "@/icons/Bookmark";
 
 export default function Card({ tool }) {
   return (
-    <div className="card flex flex-col justify-between pl-7 pr-8 pt-6 pb-7 w-full rounded-2xl border-0 border-gray-600">
+    <div className="card flex flex-col justify-between pl-7 pr-8 pt-6 pb-7 w-full rounded-2xl border-0 border-gray-600 relative">
       <div className="flex items-center justify-between mb-2 pr-1">
         <h2 className="font-bold text-title font-space_grotesk">
           {tool.title}
         </h2>
-        <button>
-          {/* <button className="hover:hover:bg-white/15 py-2 px- rounded-full group"> */}
-
-          <Bookmark className="mb-1 text-transparent hover:text-[#f1f1f1]" />
+        {/* <button> */}
+        <button className=" hover:hover:bg-white/15 py-2 px-2.5 rounded-full group absolute right-6 top-5">
+          {/* hover:hover:bg-white/15 */}
+          <Bookmark className="mb-1 text-transparent group-hover:text-[#f1f1f1]" />
         </button>
       </div>
       <p className="text-base text-[#aaa] mb-2 w-4/5 line-clamp-2 ">
@@ -36,7 +36,7 @@ export default function Card({ tool }) {
         <a className="flex flex-row items-center gap-x-1.5 group" href="">
           <img src="/user.png" width="25" className="rounded-full" />
 
-          <p className="text-[#aaa] group-hover:text-gray-300">Zeus</p>
+          <p className="text-[#aaa] group-hover:text-gray-300 pr-2">Zeus</p>
         </a>
         {/* <div class="relative p-[10px] bg-gradient-to-r from-[#DB2677] to-[#b24dda] rounded-lg flex flex-row items-baseline justify-end"> */}
         <a
