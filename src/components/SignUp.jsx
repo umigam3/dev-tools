@@ -399,9 +399,9 @@ export default function SignUp({ setShowSignUp, setShowLogIn }) {
                   tabIndex={modalSlide !== 1 ? -1 : 0}
                 />
                 <ul className="text-[13px] text-[#aaa] list-disc pl-6 mt-2">
-                  <li>Must include numbers.</li>
-                  <li>Must include uppercase letters.</li>
-                  <li>Must be longer than 8 characters.</li>
+                  <li>One number</li>
+                  <li>One uppercase letter</li>
+                  <li>8 characters minimum</li>
                 </ul>
               </div>
               <Button
