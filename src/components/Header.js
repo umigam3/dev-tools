@@ -1,7 +1,7 @@
-import Login from "@/icons/LogIn";
-import { Button } from "@nextui-org/button";
 import Login from "../icons/LogIn";
 
+// Utility
+import { useRouter } from "next/navigation";
 
 // UI
 import {
@@ -34,14 +34,8 @@ export default function Header({ setShowLogIn, setShowSignUp }) {
             <>
               {/* Content for logged-in users (customize as needed) */}
               {/* <span className="text-[#f1f1f1]">Welcome back!</span> */}
-              {/* <button
-                onClick={() => setShowSignUp(true)}
-                className="relative group inline-flex justify-center items-center py-1 px-7 w-max text-base font-medium text-center text-[#f1f1f1] rounded-[0.6rem] focus:ring-primary-300 bg-gradient"
-              >
-                Add tool
-              </button> */}
               <button
-                onClick={() => setShowSignUp(true)}
+                onClick={() => router.push("/addTool")}
                 className="relative group inline-flex justify-center items-center py-1 px-7 w-max text-base font-medium text-center text-[#f1f1f1] rounded-[0.6rem] focus:ring-primary-300 bg-gradient max-h-8"
               >
                 Add Tool
