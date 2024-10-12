@@ -1,11 +1,22 @@
 import Login from "@/icons/LogIn";
 import { Button } from "@nextui-org/button";
+import Login from "../icons/LogIn";
+
 
 // UI
-import User from "@/icons/User";
+import {
+  Dropdown,
+  DropdownTrigger,
+  DropdownMenu,
+  DropdownItem,
+  Button,
+} from "@nextui-org/react";
+
+import User from "../icons/User";
 
 export default function Header({ setShowLogIn, setShowSignUp }) {
-  const session = true;
+  const session = false;
+  const router = useRouter();
 
   return (
     <header className="fixed z-40 flex items-center h-16 w-full bg-[#121212] header">
@@ -41,15 +52,38 @@ export default function Header({ setShowLogIn, setShowSignUp }) {
               >
                 Collection
               </button> */}
-              <button
-                type="button"
-                className="hover:bg-white/10 rounded-full p-2 top-4 right-5 z-50"
+              <Dropdown
+                classNames={{
+                  content: ["bg-[#202020]", "min-w-[100px]"],
+                }}
               >
-                <img src="/user.png" width="25" className="rounded-full" />
+                <DropdownTrigger>
+                  <button
+                    type="button"
+                    className="hover:bg-white/10 rounded-full p-2 top-4 right-5 z-50"
+                  >
+                    <img src="/user.png" width="25" className="rounded-full" />
 
-                {/* <User /> */}
-                {/* <img src="/user.svg" width="22px" /> */}
-              </button>
+                    {/* <User /> */}
+                    {/* <img src="/user.svg" width="22px" /> */}
+                  </button>
+                </DropdownTrigger>
+                <DropdownMenu aria-label="Static Actions" classNames={{}}>
+                  <DropdownItem
+                    key="profile"
+                    classNames={{
+                      base: [
+                        "focus:border-red-500",
+                        "data-[focus-visible=true]:outline-4",
+                      ],
+                    }}
+                  >
+                    Profile
+                  </DropdownItem>
+                  <DropdownItem key="collections">Collections</DropdownItem>
+                  <DropdownItem key="tools">Tools</DropdownItem>
+                </DropdownMenu>
+              </Dropdown>
 
               {/* Add a profile button or logout functionality here */}
             </>
