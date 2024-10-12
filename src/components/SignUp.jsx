@@ -5,6 +5,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { signIn } from "next-auth/react";
 import FocusTrap from "focus-trap-react";
+import HoverCircle from "../components/HoverCircle";
 
 // UI
 import { Input } from "@nextui-org/react";
@@ -66,6 +67,8 @@ export default function SignUp({ setShowSignUp, setShowLogIn }) {
   }, [setShowSignUp]);
 
   const toggleVisibility = () => setIsVisible(!isVisible);
+  const [hover, setHover] = useState(false);
+
   return (
     <FocusTrap active={true}>
       <motion.div
@@ -135,13 +138,16 @@ export default function SignUp({ setShowSignUp, setShowLogIn }) {
               </motion.button>
             )}
           </AnimatePresence>
-          <button
+          <motion.button
             type="button"
             onClick={() => setShowSignUp(false)}
-            className="hover:bg-white/10 rounded-full p-2 absolute top-4 right-5 z-50"
+            className="rounded-full p-2 absolute top-4 right-5 z-50"
+            onHoverStart={() => setHover(true)}
+            onHoverEnd={() => setHover(false)}
           >
             <Close className="text-gray-100" />
-          </button>
+            <AnimatePresence>{hover && <HoverCircle />}</AnimatePresence>
+          </motion.button>
           <div
             className="absolute h-full w-full flex flex-row carousell"
             style={{ left: `-${100 * modalSlide}%` }}

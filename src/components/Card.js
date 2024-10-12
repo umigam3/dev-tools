@@ -1,7 +1,10 @@
 import Arrow from "@/icons/Arrow";
 import Bookmark from "@/icons/Bookmark";
+import { useState } from "react";
+import HoverCircle from "../components/HoverCircle";
 
 export default function Card({ tool }) {
+  const [hover, setHover] = useState(false);
   return (
     <div className="card flex flex-col justify-between pl-7 pr-8 pt-6 pb-7 w-full rounded-2xl border-0 border-gray-600 relative">
       <div className="flex items-center justify-between mb-2 pr-1">
@@ -9,10 +12,16 @@ export default function Card({ tool }) {
           {tool.title}
         </h2>
         {/* <button> */}
-        <button className=" hover:hover:bg-white/15 py-2 px-2.5 rounded-full group absolute right-6 top-5">
+        <motion.button
+          className="  py-2 px-2.5 rounded-full group absolute right-6 top-5"
+          onHoverStart={() => setHover(true)}
+          onHoverEnd={() => setHover(false)}
+        >
           {/* hover:hover:bg-white/15 */}
-          <Bookmark className="mb-1 text-transparent group-hover:text-[#f1f1f1]" />
-        </button>
+          <Bookmark className="mb-1 text-transparent group-hover:text-[#f1f1f1] transition-all duration-150 z-50 relative" />
+
+          <AnimatePresence>{hover && <HoverCircle />}</AnimatePresence>
+        </motion.button>
       </div>
       <p className="text-base text-[#aaa] mb-2 w-4/5 line-clamp-2 ">
         {/* leading-6 h-[3rem] */}
