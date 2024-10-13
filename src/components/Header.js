@@ -20,7 +20,7 @@ export default function Header({ setShowLogIn, setShowSignUp }) {
 
   return (
     <header className="fixed z-40 flex items-center h-16 w-full bg-[#121212] header">
-      <div className="flex justify-between max-w-7xl w-full mx-auto px-9">
+      <div className="flex justify-between max-w-7xl w-full mx-auto px-9 pl-[8rem]">
         <a
           href="/"
           className="flex flex-row items-center text-base font-space_grotesk font-medium gap-x-1"
