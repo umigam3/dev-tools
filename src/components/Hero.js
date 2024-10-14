@@ -1,4 +1,4 @@
-import Arrow from "@/icons/Arrow";
+import Arrow from "../icons/Arrow";
 
 export default function Hero() {
   return (

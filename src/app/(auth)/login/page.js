@@ -9,8 +9,8 @@ import { Input } from "@nextui-org/react";
 import { Button } from "@nextui-org/button";
 
 // Icons
-import { EyeSlashFilledIcon } from "@/components/ui/EyeSlashFilledIcon";
-import { EyeFilledIcon } from "@/components/ui/EyeFilledIcon";
+import { EyeSlashFilledIcon } from "../components/ui/EyeSlashFilledIcon";
+import { EyeFilledIcon } from "../components/ui/EyeFilledIcon";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, useMemo } from "react";
-import Card from "@/components/Card";
+import Card from "../components/Card";
 import axios from "axios";
 import { Input } from "@nextui-org/input";
 import { SearchIcon } from "./ui/SearchIcon";

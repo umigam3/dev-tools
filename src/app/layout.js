@@ -1,13 +1,14 @@
 "use client";
 
-import { Space_Grotesk, DM_Sans, Barlow } from "next/font/google";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import LogIn from "@/components/LogIn";
+import { Space_Grotesk, DM_Sans } from "next/font/google";
+import Header from "../components/Header";
+import SideBar from "../components/SideBar";
+import Footer from "../components/Footer";
+import LogIn from "../components/LogIn";
+import SignUp from "../components/SignUp";
 import "./globals.css";
 import { useState, useEffect } from "react";
 import { delay, motion, AnimatePresence } from "framer-motion";
-import SignUp from "@/components/SignUp";
 import { ReactLenis, useLenis } from "lenis/react";
 
 const dm_sans = DM_Sans({ subsets: ["latin"], variable: "--font-dm_sans" });
@@ -15,6 +16,8 @@ const space_grotesk = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-space_grotesk",
 });
+
+import { NextUIProvider } from "@nextui-org/react";
 
 // export const metadata = {
 //   title: "AllTools.dev - A complete collection of developer tools",
@@ -48,6 +51,7 @@ export default function RootLayout({ children }) {
         >
           {/* <LogInContext.Provider value={setShowLogIn}> */}
           <Header setShowLogIn={setShowLogIn} setShowSignUp={setShowSignUp} />
+          <SideBar />
           <AnimatePresence>
             {showLogIn && (
               <LogIn

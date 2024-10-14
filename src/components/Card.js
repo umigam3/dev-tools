@@ -1,7 +1,8 @@
-import Arrow from "@/icons/Arrow";
-import Bookmark from "@/icons/Bookmark";
 import { useState } from "react";
+import Arrow from "../icons/Arrow";
+import Bookmark from "../icons/Bookmark";
 import HoverCircle from "../components/HoverCircle";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function Card({ tool }) {
   const [hover, setHover] = useState(false);

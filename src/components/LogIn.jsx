@@ -8,11 +8,11 @@ import FocusTrap from "focus-trap-react";
 // UI
 import { Input } from "@nextui-org/react";
 import { Button } from "@nextui-org/button";
-import Close from "@/icons/Close";
+import Close from "../icons/Close";
 
 // Icons
-import { EyeSlashFilledIcon } from "@/components/ui/EyeSlashFilledIcon";
-import { EyeFilledIcon } from "@/components/ui/EyeFilledIcon";
+import { EyeSlashFilledIcon } from "../components/ui/EyeSlashFilledIcon";
+import { EyeFilledIcon } from "../components/ui/EyeFilledIcon";
 
 // Framer Motion
 import { motion } from "framer-motion";

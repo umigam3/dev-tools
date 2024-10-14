@@ -1,5 +1,5 @@
-import Hero from '@/components/Hero';
-import ToolContent from '@/components/ToolContent';
+import Hero from "../components/Hero";
+import ToolContent from "../components/ToolContent";
 
 export default function HomePage() {
   return (
