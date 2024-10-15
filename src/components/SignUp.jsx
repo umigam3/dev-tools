@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { signIn } from "next-auth/react";
 import FocusTrap from "focus-trap-react";
 import HoverCircle from "../components/HoverCircle";
+import HoverButton from "../components/HoverButton";
 
 // UI
 import { Input } from "@nextui-org/react";
@@ -138,16 +139,22 @@ export default function SignUp({ setShowSignUp, setShowLogIn }) {
               </motion.button>
             )}
           </AnimatePresence>
-          <motion.button
+          {/* <motion.button
             type="button"
-            onClick={() => setShowSignUp(false)}
             className="rounded-full p-2 absolute top-4 right-5 z-50"
             onHoverStart={() => setHover(true)}
             onHoverEnd={() => setHover(false)}
-          >
-            <Close className="text-gray-100" />
+            >
             <AnimatePresence>{hover && <HoverCircle />}</AnimatePresence>
-          </motion.button>
+            </motion.button> */}
+          <HoverButton
+            onClick={() => setShowSignUp(false)}
+            className={"p-2 rounded-full group absolute right-6 top-5"}
+            icon={
+              // <Bookmark className="my-0.5 text-transparent group-hover:text-[#f1f1f1] transition-all duration-150 z-50 relative" />
+              <Close className="text-gray-100 z-50 relative" />
+            }
+          />
           <div
             className="absolute h-full w-full flex flex-row carousell"
             style={{ left: `-${100 * modalSlide}%` }}
