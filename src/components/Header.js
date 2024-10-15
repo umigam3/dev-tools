@@ -20,12 +20,12 @@ export default function Header({ setShowLogIn, setShowSignUp }) {
 
   return (
     <header className="fixed z-40 flex items-center h-16 w-full bg-[#121212] header">
-      <div className="flex justify-between max-w-7xl w-full mx-auto px-9 pl-[8rem]">
+      <div className="flex justify-between w-full mx-auto pr-8 pl-20">
         <a
           href="/"
-          className="flex flex-row items-center text-base font-space_grotesk font-medium gap-x-1"
+          className="flex flex-row items-center text-title tracking-tighter font-space_grotesk font-medium gap-x-1"
         >
-          <img src="/logo.svg" width="32" className="mt-0.5" />
+          <img src="/logo.svg" width="36" className="" />
           Dev Tools
         </a>
 
@@ -83,12 +83,12 @@ export default function Header({ setShowLogIn, setShowSignUp }) {
             </>
           ) : (
             <>
-              <button
+              {/* <button
                 onClick={() => setShowLogIn(true)}
                 className="relative group inline-flex justify-center items-center py-1 px-5 w-max text-base font-medium text-center text-[#f1f1f1] rounded-[0.6rem] focus:ring-primary-300 hover:bg-white/15 p-4"
               >
                 Sign in
-              </button>
+              </button> */}
               <button
                 onClick={() => setShowSignUp(true)}
                 className="relative group inline-flex justify-center items-center py-1 px-7 w-max text-base font-medium text-center text-[#f1f1f1] rounded-[0.6rem] focus:ring-primary-300 bg-gradient"

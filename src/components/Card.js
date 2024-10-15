@@ -1,8 +1,7 @@
 import { useState } from "react";
 import Arrow from "../icons/Arrow";
 import Bookmark from "../icons/Bookmark";
-import HoverCircle from "../components/HoverCircle";
-import { AnimatePresence, motion } from "framer-motion";
+import HoverButton from "../components/HoverButton";
 
 export default function Card({ tool }) {
   const [hover, setHover] = useState(false);
@@ -12,17 +11,12 @@ export default function Card({ tool }) {
         <h2 className="font-bold text-title font-space_grotesk">
           {tool.title}
         </h2>
-        {/* <button> */}
-        <motion.button
-          className="  py-2 px-2.5 rounded-full group absolute right-6 top-5"
-          onHoverStart={() => setHover(true)}
-          onHoverEnd={() => setHover(false)}
-        >
-          {/* hover:hover:bg-white/15 */}
-          <Bookmark className="mb-1 text-transparent group-hover:text-[#f1f1f1] transition-all duration-150 z-50 relative" />
-
-          <AnimatePresence>{hover && <HoverCircle />}</AnimatePresence>
-        </motion.button>
+        <HoverButton
+          className={"py-2 px-2.5 rounded-full group absolute right-6 top-5"}
+          icon={
+            <Bookmark className="my-0.5 text-transparent group-hover:text-[#f1f1f1] transition-all duration-150 z-50 relative" />
+          }
+        />
       </div>
       <p className="text-base text-[#aaa] mb-2 w-4/5 line-clamp-2 ">
         {/* leading-6 h-[3rem] */}
@@ -65,6 +59,7 @@ export default function Card({ tool }) {
           </div>
         </a>
       </div>
+
       {/* </div> */}
     </div>
   );
