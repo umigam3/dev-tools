@@ -9,6 +9,7 @@ import FocusTrap from "focus-trap-react";
 import { Input } from "@nextui-org/react";
 import { Button } from "@nextui-org/button";
 import Close from "../icons/Close";
+import { InputDev } from "../components/ui/InputDev";
 
 // Icons
 import { EyeSlashFilledIcon } from "../components/ui/EyeSlashFilledIcon";
@@ -129,48 +130,11 @@ export default function LogIn({ setShowLogIn, setShowSignUp }) {
             <div className="h-[1px] bg-[#f1f1f1] w-1/3"></div>
           </div>
           <div className="mb-3 w-11/12 z-20 relative">
-            <Input
-              color="dark"
-              variant="bordered"
+            <InputDev
               type="email"
               label="Email"
-              size="sm"
-              radius="md"
-              // placeholder="Enter your email"
-              id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              // isClearable
-              // onClear={() => {
-              //   setEmail("");
-              // }}
-              // isRequired
-              classNames={{
-                input: ["text-base"],
-                mainWrapper: ["text-base"],
-                label: [
-                  "text-base",
-                  "text-gray-200",
-                  "absolute",
-                  "transition-all",
-                  "px-2",
-                  // "rounded-full",
-                  "duration-300",
-                  "bg-[#1f1f1f]",
-                  "group-data-[filled-within=true]:-translate-y-[calc(80%_+_theme(fontSize.tiny)/2_-_8px_-_theme(borderWidth.medium))]",
-                ],
-
-                innerWrapper: ["group-data-[has-label=true]:items-center"],
-                inputWrapper: [
-                  "border-[#525252]",
-                  "group-data-[focus=true]:border-[#D50E97]",
-                  "group-data-[focus=true]:border-2",
-                  "border-1",
-                  "py-0",
-                  "text-2xl",
-                ],
-                input: ["pl-2", "text-base"],
-              }}
             />
           </div>
           <div className="mb-10 w-11/12">

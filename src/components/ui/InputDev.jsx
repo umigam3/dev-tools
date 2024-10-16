@@ -1,7 +1,14 @@
 import React from "react";
 import { Input } from "@nextui-org/react";
 
-export const InputDev = ({ type, label, value, onChange, isRequired }) => (
+export const InputDev = ({
+  type,
+  label,
+  value,
+  onChange,
+  isRequired,
+  isDisabled,
+}) => (
   <Input
     color="dark"
     variant="bordered"
@@ -10,6 +17,7 @@ export const InputDev = ({ type, label, value, onChange, isRequired }) => (
     size="sm"
     radius="md"
     id={label}
+    isDisabled={isDisabled ?? false}
     value={value}
     onChange={onChange}
     isRequired={isRequired ?? false}
@@ -29,12 +37,13 @@ export const InputDev = ({ type, label, value, onChange, isRequired }) => (
 
       innerWrapper: ["group-data-[has-label=true]:items-center"],
       inputWrapper: [
-        "border-[#525252]",
+        `border-${isDisabled ? "transparent" : "[#525252]"}`,
         "group-data-[focus=true]:border-[#D50E97]",
         "group-data-[focus=true]:border-2",
-        "border-1",
+        `border-1`,
         "py-0",
         "text-2xl",
+        "transition-all",
       ],
       input: ["pl-2", "text-base"],
     }}
