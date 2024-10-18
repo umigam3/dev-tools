@@ -21,6 +21,9 @@ import { AnimatePresence, motion } from "framer-motion";
 import Card from "../../components/Card";
 import { InputDev } from "../../components/ui/InputDev";
 import Follow from "../../icons/Follow";
+import Link from "../../icons/Link";
+import LinkedIn from "../../icons/LinkedIn";
+import GitHub from "../../icons/GitHub";
 // import ArrowBack from "../icons/ArrowBack";
 
 export default function SignUpPage() {
@@ -38,7 +41,7 @@ export default function SignUpPage() {
   ];
 
   return (
-    <main className="max-w-[90%] h-[100vh] mt-20 mx-auto py-20 w-full">
+    <main className="max-w-[90%] mt-16 pt-12 pb-16 mx-auto w-full flex justify-center">
       <div className="grid grid-cols-2 grid-rows-3 max-w-[50%] mx-auto gap-4 relative">
         <div className="rounded-3xl card flex flex-col pt-10 pb-7 gap-x-4 px-12 col-span-2">
           <div className="flex flex-row justify-between mb-3">
@@ -131,12 +134,33 @@ export default function SignUpPage() {
         <div className="rounded-3xl card grid grid-cols-2 pt-10 pb-7 gap-x-4 px-12 col-span-2">
           <div className="flex flex-col pl-4">
             <h2 className="text-title font-space_grotesk mb-2">Socials</h2>
-            <ul>
-              <li>
-                <a href="noahguardiola.com">zeusgodofsky.com</a>
+            <ul className="flex flex-col gap-y-1">
+              <li className="flex flex-row items-center gap-x-2">
+                <Link className="w-4 h-4" />
+                <a
+                  href="noahguardiola.com"
+                  className="hover:text-blue-400 hover:underline"
+                >
+                  zeusgodofsky.com
+                </a>
               </li>
-              <li>
-                <a href="noahguardiola.com">in/zeus</a>
+              <li className="flex flex-row items-center gap-x-2">
+                <LinkedIn className="w-4 h-4" />
+                <a
+                  href="noahguardiola.com"
+                  className="hover:text-blue-400 hover:underline"
+                >
+                  in/zeus
+                </a>
+              </li>
+              <li className="flex flex-row items-center gap-x-2">
+                <GitHub className="w-4 h-4 rounded-sm" />
+                <a
+                  href="noahguardiola.com"
+                  className="hover:text-blue-400 hover:underline"
+                >
+                  zeus-coder
+                </a>
               </li>
             </ul>
           </div>
