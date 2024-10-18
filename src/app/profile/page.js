@@ -27,6 +27,16 @@ export default function SignUpPage() {
   const [edit, setEdit] = useState(false);
   const [name, setName] = useState("");
 
+  const interests = [
+    "UX",
+    "React",
+    "JavaScript",
+    "UI",
+    "CSS",
+    "HTML",
+    "TypeScript",
+  ];
+
   return (
     <main className="max-w-[90%] h-[100vh] mt-20 mx-auto py-20 w-full">
       <div className="grid grid-cols-2 grid-rows-3 max-w-[50%] mx-auto gap-4 relative">
@@ -118,6 +128,34 @@ export default function SignUpPage() {
           </h2>
         </button>
 
+        <div className="rounded-3xl card grid grid-cols-2 pt-10 pb-7 gap-x-4 px-12 col-span-2">
+          <div className="flex flex-col pl-4">
+            <h2 className="text-title font-space_grotesk mb-2">Socials</h2>
+            <ul>
+              <li>
+                <a href="noahguardiola.com">zeusgodofsky.com</a>
+              </li>
+              <li>
+                <a href="noahguardiola.com">in/zeus</a>
+              </li>
+            </ul>
+          </div>
+          <div className="flex flex-col pl-10">
+            <h2 className="text-title font-space_grotesk mb-2">Interests</h2>
+            <div className="flex flex-wrap mb-6 w-full whitespace-nowrap -ml-0.5 gap-x-2">
+              {interests.map((tag, index) => {
+                return (
+                  <span
+                    key={index}
+                    className="border-1 text-[#aaa] text-[13px] font-normal px-2.5 py-[0.15rem] rounded-xl dark:border-[#525252] dark:text-[#aaa] mb-2"
+                  >
+                    {tag}
+                  </span>
+                );
+              })}
+            </div>
+          </div>
+        </div>
       </div>
     </main>
   );
