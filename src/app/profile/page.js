@@ -20,7 +20,7 @@ import HoverButton from "../../components/HoverButton";
 import { AnimatePresence, motion } from "framer-motion";
 import Card from "../../components/Card";
 import { InputDev } from "../../components/ui/InputDev";
-// import ArrowNext from "../icons/ArrowNext";
+import Follow from "../../icons/Follow";
 // import ArrowBack from "../icons/ArrowBack";
 
 export default function SignUpPage() {
@@ -30,21 +30,44 @@ export default function SignUpPage() {
   return (
     <main className="max-w-[90%] h-[100vh] mt-20 mx-auto py-20 w-full">
       <div className="grid grid-cols-2 grid-rows-3 max-w-[50%] mx-auto gap-4 relative">
-        <div className="h-48 rounded-3xl card col-span-1 flex py-10 gap-x-4 pl-12">
-          <button type="button" className="rounded-full p-2 top-4 right-5">
-            <img src="/user.png" width="75" className="rounded-full" />
+        <div className="rounded-3xl card flex flex-col pt-10 pb-7 gap-x-4 px-12 col-span-2">
+          <div className="flex flex-row justify-between mb-3">
+            <h1 className="text-title pl-4 font-space_grotesk">@Zeus</h1>
+            <button
+              className="relative link bg-gray-100 rounded-[0.6rem] text-base py-1 group border-0 border-[#fff] hover:bg-gray-200 w-1/6 flex flex-row items-center justify-center gap-x-0.5"
+              //   D7368B
+            >
+              <Follow className="w-4 h-4 transform -scale-x-100 text-[#121212] mb-0.5" />
+              <span className="text-[#121212] font-semibold">Follow</span>
+            </button>
+          </div>
+          <div className="flex flex-row justify-between items-center">
+            <div className="flex flex-row items-center">
+              <div className="rounded-full p-2">
+                <img
+                  src="/user.png"
+                  width="80"
+                  height="80"
+                  className="rounded-full"
+                />
 
-            {/* <User /> */}
-            {/* <img src="/user.svg" width="22px" /> */}
-          </button>
+                {/* <User /> */}
+                {/* <img src="/user.svg" width="22px" /> */}
+              </div>
 
-          <div className="mt-5">
-            <p className="text-title font-space_grotesk">@Zeus</p>
-            <p className="text-base text-[#aaa] pl-1">Web Developer</p>
+              <div className="ml-4 mb-2">
+                <p className="text-base">Zeus</p>
+                <p className="text-base text-[#aaa]">Web Developer</p>
+              </div>
+            </div>
+            <div className="mb-2">
+              <p className="text-base text-[#aaa] text-end">10 Followers</p>
+              <p className="text-base text-[#aaa] text-end">11 Following</p>
+            </div>
           </div>
         </div>
-        <div className="rounded-3xl card py-14 row-span-2">
-          <HoverButton
+        {/* <div className="rounded-3xl card py-14 row-span-2"> */}
+        {/* <HoverButton
             onClick={() => setEdit(edit ? false : true)}
             className={"p-2 rounded-xl absolute top-4 right-5"}
             icon={
@@ -55,7 +78,7 @@ export default function SignUpPage() {
           <div className="mb-4 px-11">
             <InputDev
               type="name"
-              label="First name"
+              label="Name"
               value={name}
               onChange={(e) => setName(e.target.value)}
               isDisabled={edit}
@@ -78,13 +101,12 @@ export default function SignUpPage() {
             <p className="text-[14px] leading-tight">Phone</p>
             <p className="text-[#aaa]">636175308</p>
           </div> */}
-          {/* <div>
+        {/* <div>
             <p className="text-[#aaa] text-[13px]">First Name</p>
             <p>Zeus</p>
           </div> */}
-        </div>
-        <div className="h-48 rounded-3xl card"></div>
-        <div className="h-48 rounded-3xl card col-span-2"></div>
+        <div className="rounded-3xl card"></div>
+        <div className="rounded-3xl card"></div>
       </div>
     </main>
   );
