@@ -105,8 +105,19 @@ export default function SignUpPage() {
             <p className="text-[#aaa] text-[13px]">First Name</p>
             <p>Zeus</p>
           </div> */}
-        <div className="rounded-3xl card"></div>
-        <div className="rounded-3xl card"></div>
+        <button className="rounded-3xl card flex items-center justify-center">
+          <h2 className="text-[2.15rem] tracking-tighter font-space_grotesk">
+            <span className="text-8xl  tracking-tighter -ml-1">14</span> <br />
+            Tools
+          </h2>
+        </button>
+        <button className="rounded-3xl card flex items-center justify-center">
+          <h2 className="text-[2.15rem] tracking-tighter font-space_grotesk">
+            <span className="text-8xl  tracking-tighter -ml-1">8</span> <br />
+            Collections
+          </h2>
+        </button>
+
       </div>
     </main>
   );
