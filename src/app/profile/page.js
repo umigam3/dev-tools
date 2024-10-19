@@ -119,12 +119,12 @@ export default function SignUpPage() {
             <p className="text-[#aaa] text-[13px]">First Name</p>
             <p>Zeus</p>
           </div> */}
-        <button className="rounded-3xl card flex flex-col items-center justify-center gap-y-2">
-          <h2 className="text-[2.15rem] tracking-tighter font-space_grotesk leading-4 ">
+        <button className="rounded-3xl card flex flex-col items-center justify-center gap-y-2 overflow-hidden group hover:gap-y-0 transition-all">
+          <h2 className="text-[2.15rem] tracking-tighter font-space_grotesk leading-4">
             <span className="text-8xl  tracking-tighter -ml-1">14</span> <br />
             Tools
           </h2>
-          <ArrowDown className="text-[#f1f1f1] w-12 h-12" />
+          <ArrowDown className="text-[#f1f1f1] w-12 h-12 group-hover:mb-4 transition-all" />
         </button>
         <button className="rounded-3xl card flex flex-col items-center justify-center gap-y-2">
           <h2 className="text-[2.15rem] tracking-tighter font-space_grotesk leading-4 ">
