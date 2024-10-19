@@ -24,6 +24,7 @@ import Follow from "../../icons/Follow";
 import Link from "../../icons/Link";
 import LinkedIn from "../../icons/LinkedIn";
 import GitHub from "../../icons/GitHub";
+import ArrowDown from "../../icons/ArrowDown";
 // import ArrowBack from "../icons/ArrowBack";
 
 export default function SignUpPage() {
@@ -41,9 +42,9 @@ export default function SignUpPage() {
   ];
 
   return (
-    <main className="max-w-[90%] mt-16 pt-12 pb-16 mx-auto w-full flex justify-center">
+    <main className="mt-16 pt-12 pb-16 ml-10 w-full flex justify-center">
       <div className="grid grid-cols-2 grid-rows-3 max-w-[50%] mx-auto gap-4 relative">
-        <div className="rounded-3xl card flex flex-col pt-10 pb-7 gap-x-4 px-12 col-span-2">
+        <div className="rounded-3xl card flex flex-col pt-10 pb-7 gap-x-4 pl-12 pr-14 col-span-2">
           <div className="flex flex-row justify-between mb-3">
             <h1 className="text-title pl-4 font-space_grotesk">@Zeus</h1>
             <button
@@ -118,17 +119,19 @@ export default function SignUpPage() {
             <p className="text-[#aaa] text-[13px]">First Name</p>
             <p>Zeus</p>
           </div> */}
-        <button className="rounded-3xl card flex items-center justify-center">
-          <h2 className="text-[2.15rem] tracking-tighter font-space_grotesk">
+        <button className="rounded-3xl card flex flex-col items-center justify-center gap-y-2">
+          <h2 className="text-[2.15rem] tracking-tighter font-space_grotesk leading-4 ">
             <span className="text-8xl  tracking-tighter -ml-1">14</span> <br />
             Tools
           </h2>
+          <ArrowDown className="text-[#f1f1f1] w-12 h-12" />
         </button>
-        <button className="rounded-3xl card flex items-center justify-center">
-          <h2 className="text-[2.15rem] tracking-tighter font-space_grotesk">
+        <button className="rounded-3xl card flex flex-col items-center justify-center gap-y-2">
+          <h2 className="text-[2.15rem] tracking-tighter font-space_grotesk leading-4 ">
             <span className="text-8xl  tracking-tighter -ml-1">8</span> <br />
             Collections
           </h2>
+          <ArrowDown className="text-[#f1f1f1] w-12 h-12" />
         </button>
 
         <div className="rounded-3xl card grid grid-cols-2 pt-10 pb-7 gap-x-4 px-12 col-span-2">
