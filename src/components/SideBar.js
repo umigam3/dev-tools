@@ -18,11 +18,20 @@ import Home from "../icons/Home";
 import Featured from "../icons/Featured";
 import Users from "../icons/Users";
 import Collections from "../icons/Collections";
-import { useState } from "react";
+import Tools from "../icons/Tools";
+import { useState, useEffect } from "react";
 
 export default function SideBar() {
   const [selected, setSelected] = useState(0);
   const router = useRouter();
+
+  useEffect(() => {
+    console.log("selected", selected);
+    if (selected === 0) router.push("/");
+    else if (selected === 1) router.push("/featured");
+    else if (selected === 2) router.push("/tools");
+    else if (selected === 3) router.push("/collections");
+  }, [selected]);
 
   return (
     <div className="fixed z-40 flex items-start justify-center w-16 h-full header pt-16 pl-4">
@@ -55,6 +64,19 @@ export default function SideBar() {
           text={"Featured"}
         />
 
+        <HoverButton
+          className={
+            "p-2 w-16 h-16 rounded-xl relative flex flex-col items-center justify-center"
+          }
+          icon={
+            <Tools
+              className="text-gray-100"
+              fill={selected === 2 ? "#f3f4f6" : "none"}
+            />
+          }
+          onClick={() => setSelected(2)}
+          text={"Tools"}
+        />
         <HoverButton
           className={
             "p-2 w-16 h-16 rounded-xl relative flex flex-col items-center justify-center"
