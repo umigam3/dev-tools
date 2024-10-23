@@ -43,12 +43,12 @@ export default function SignUpPage() {
 
   return (
     <main className="mt-16 pt-12 pb-16 ml-10 w-full flex justify-center">
-      <div className="grid grid-cols-2 grid-rows-3 max-w-[50%] mx-auto gap-4 relative">
+      <div className="grid grid-cols-2 grid-rows-[1fr_1.1fr_1fr] max-w-[50%] mx-auto gap-4 relative">
         <div className="rounded-3xl card flex flex-col pt-10 pb-7 gap-x-4 pl-12 pr-14 col-span-2">
           <div className="flex flex-row justify-between mb-3">
             <h1 className="text-title pl-4 font-space_grotesk">@Zeus</h1>
             <button
-              className="relative link bg-gray-100 rounded-[0.6rem] text-base py-1 group border-0 border-[#fff] hover:bg-gray-200 w-1/6 flex flex-row items-center justify-center gap-x-0.5"
+              className="relative link bg-gray-100 rounded-[0.6rem] text-base py-1 group border-0 border-[#fff] hover:bg-[#e5e5e5] w-1/6 flex flex-row items-center justify-center gap-x-0.5"
               //   D7368B
             >
               <Follow className="w-4 h-4 transform -scale-x-100 text-[#121212] mb-0.5" />
@@ -119,19 +119,30 @@ export default function SignUpPage() {
             <p className="text-[#aaa] text-[13px]">First Name</p>
             <p>Zeus</p>
           </div> */}
-        <button className="rounded-3xl card flex flex-col items-center justify-center gap-y-2 overflow-hidden group hover:gap-y-0 transition-all">
-          <h2 className="text-[2.15rem] tracking-tighter font-space_grotesk leading-4">
-            <span className="text-8xl  tracking-tighter -ml-1">14</span> <br />
-            Tools
-          </h2>
-          <ArrowDown className="text-[#f1f1f1] w-12 h-12 group-hover:mb-4 transition-all" />
+        <button className="grid grid-rows-[78%_22%] group">
+          <div className="rounded-t-3xl button-card flex flex-col items-center justify-center gap-y-2 overflow-hidden transition-all h-full">
+            <h2 className="text-[2.15rem] tracking-tighter font-space_grotesk leading-4 text-[#f1f1f1] group-hover:text-[#e0e0e0]">
+              <span className="text-8xl  tracking-tighter -ml-1">14</span>{" "}
+              <br />
+              Tools & Snippets
+            </h2>
+          </div>
+          <div className="bg-[#f1f1f1] text-[#202020] text-title font-bold rounded-b-3xl flex items-center justify-center h-full group-hover:bg-[#e0e0e0]">
+            {/* <ArrowDown className="text-[#202020] w-12 h-12 transition-all" /> */}
+            View
+          </div>
         </button>
-        <button className="rounded-3xl card flex flex-col items-center justify-center gap-y-2">
-          <h2 className="text-[2.15rem] tracking-tighter font-space_grotesk leading-4 ">
-            <span className="text-8xl  tracking-tighter -ml-1">8</span> <br />
-            Collections
-          </h2>
-          <ArrowDown className="text-[#f1f1f1] w-12 h-12" />
+        <button className="grid grid-rows-[78%_22%] group">
+          <div className="rounded-t-3xl button-card flex flex-col items-center justify-center gap-y-2 overflow-hidden transition-all h-full">
+            <h2 className="text-[2.15rem] tracking-tighter font-space_grotesk leading-4 text-[#f1f1f1] group-hover:text-[#e0e0e0]">
+              <span className="text-8xl  tracking-tighter -ml-1">8</span> <br />
+              Collections
+            </h2>
+          </div>
+          <div className="bg-[#f1f1f1] text-[#202020] text-title font-bold rounded-b-3xl flex items-center justify-center h-full group-hover:bg-[#e0e0e0]">
+            {/* <ArrowDown className="text-[#202020] w-12 h-12 transition-all" /> */}
+            View
+          </div>
         </button>
 
         <div className="rounded-3xl card grid grid-cols-2 pt-10 pb-7 gap-x-4 px-12 col-span-2">

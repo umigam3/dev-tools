@@ -107,6 +107,18 @@ h6 {
   /* box-shadow: 8px 8px 16px #080808, -8px -8px 16px #111111; */
 }
 
+.button-card {
+  background-image: linear-gradient(145deg, #1f1f1f 20%, #202020 80%);
+  background-attachment: fixed;
+  box-shadow: 8px 10px 16px -5px #090909;
+}
+
+.button-card:hover {
+  /* background-image: linear-gradient(145deg, #1a1a1a 20%, #1e1e1e 80%); */
+  /* background-attachment: fixed; */
+  box-shadow: 8px 10px 16px -5px #090909;
+}
+
 .modal {
   background-image: linear-gradient(145deg, #1f1f1f 20%, #202020 80%);
   box-shadow: 8px 8px 16px 0px #090909;
